@@ -30,7 +30,7 @@ const Banner = () => {
         }, 7000); //Adjust Zoom in duration also need to update in css + 2/3 sec
 
         return () => clearInterval(intervalId);
-    }, [images.length]);
+    });
 
     return (
         <div className=" overflow-hidden xl:h-[70vh] flex justify-center items-center">
