@@ -1,14 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useMemo } from 'react';
-import image1 from '../../../assets/images/h1-slider-1a-background-img.jpg';
-import image2 from '../../../assets/images/h1-slider-2a-background-img.jpg';
-import image3 from '../../../assets/images/h1-slider-3a-background-img.jpg';
-import image4 from '../../../assets/images/h1-slider-4a-background-img.jpg';
+import image1 from '../../../assets/images/mrcdsbf.jpg';
+import image2 from '../../../assets/images/bmwfw.png';
+import image3 from '../../../assets/images/lmbrgnbb.png';
+import image4 from '../../../assets/images/mclrnfo.png';
+import image5 from '../../../assets/images/tmk5ybt.png';
+import image6 from '../../../assets/images/ar8gf.jpg';
+import image7 from '../../../assets/images/ar8bf.png';
 import '../Banner/Banner.css';
 import { Link } from 'react-router-dom';
 
 const Banner = () => {
-    const images = useMemo(() => [image1, image2, image3, image4], []);
+    const images = useMemo(() => [image1, image2, image3, image4, image5, image6, image7], []);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isFadingOut, setIsFadingOut] = useState(false);
     const [isFadingIn, setIsFadingIn] = useState(false);
@@ -30,7 +33,7 @@ const Banner = () => {
     }, [images.length]);
 
     return (
-        <div className=" overflow-hidden xl:h-[93vh] flex justify-center items-center">
+        <div className=" overflow-hidden xl:h-[70vh] flex justify-center items-center">
             <div className="carousel w-full object-cover ">
                 {images.map((image, index) => (
                     <div
@@ -50,10 +53,10 @@ const Banner = () => {
 
                         <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <div className='flex flex-col items-center justify-center h-[88vh]'>
-                                <h2 className='xl:text-7xl md:text-5xl text-3xl font-rubik font-semibold text-white md:w-2/3 text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8'> Discover Tech Conferences, Gaming Expos, Hackathons, and More!</h2>
+                                <h2 className='xl:text-7xl md:text-5xl text-3xl font-rubik font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8'> Find Your <span className='text-[#FF9D00]'>Perfect</span> Car</h2>
                                 <div>
                                     <Link to={`/register`}>
-                                        <button className='bg-[#fe0e1e] font-rubik font-medium text-white md:px-14 px-8 md:py-4 py-2 btn-shape'>
+                                        <button className='bg-[#FF9D00] font-rubik font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape'>
                                             Join Us Now!
                                         </button>
                                     </Link>
