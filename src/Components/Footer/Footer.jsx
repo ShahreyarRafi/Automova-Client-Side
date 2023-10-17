@@ -113,7 +113,7 @@ const Footer = () => {
                     style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
                     © 2023 Copyright:
                     <a className="text-white ml-2" href="/">
-                        Company Name Here
+                        AUTOMOVA
                     </a>
                 </div>
             </footer>
