@@ -1,6 +1,6 @@
 // images.js
 
-import image1 from '../../../assets/images/mrcdsbf.jpg';
+import image1 from '../../../assets/images/mrcdsbf.png';
 import image2 from '../../../assets/images/bmwfw.png';
 import image3 from '../../../assets/images/lmbrgnbb.png';
 import image4 from '../../../assets/images/mclrnfo.png';
