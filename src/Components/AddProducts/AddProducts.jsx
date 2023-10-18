@@ -11,15 +11,15 @@ const AddProducts = () => {
         const brand = form.brand.value;
         const type = form.type.value;
         const price = form.price.value;
-        const shortDescription = form.shortDescription.value;
+        const description = form.description.value;
         const rating = form.rating.value;
         const photo = form.photo.value;
 
-        const newProduct = { name, brand, type, price, shortDescription, rating, photo }
+        const newProduct = { name, brand, type, price, description, rating, photo }
 
         console.log(newProduct);
 
-        if (!name || !brand || !type || !price || !shortDescription || !rating || !photo) {
+        if (!name || !brand || !type || !price || !description || !rating || !photo) {
             Swal.fire({
                 title: 'Error!',
                 text: 'Please fill in all required fields.',
@@ -28,7 +28,7 @@ const AddProducts = () => {
             });
             return
         } else {
-            const newProduct = { name, brand, type, price, shortDescription, rating, photo };
+            const newProduct = { name, brand, type, price, description, rating, photo };
 
             // send data to the server
             fetch('http://localhost:5000/products', {
@@ -84,8 +84,6 @@ const AddProducts = () => {
                                 </select>
                             </label>
                         </div>
-
-
                     </div>
                     {/* type and price row */}
                     <div className="md:flex mb-8">
@@ -106,14 +104,14 @@ const AddProducts = () => {
                             </label>
                         </div>
                     </div>
-                    {/* short description and ratings row */}
+                    {/* description and ratings row */}
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
                             <label className="label">
-                                <span className="label-text">Short Description</span>
+                                <span className="label-text">Description</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="shortDescription" placeholder="Short Description" className="input input-bordered w-full" />
+                                <input type="text" name="description" placeholder="Description" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">

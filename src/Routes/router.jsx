@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 element:<LoginPage></LoginPage>
             },
             {
-                path: 'add-product',
+                path: 'brand-product',
                 element: (
                     <PrivateRoute>
                         <AddProductPage></AddProductPage>
@@ -49,6 +49,7 @@ const router = createBrowserRouter([
                         <FerrariPage></FerrariPage>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/products'),
             },
             {
                 path: 'brand-audi',
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
                         <AudiPage></AudiPage>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/products'),
             },
             {
                 path: 'brand-mercedes',
@@ -65,6 +67,7 @@ const router = createBrowserRouter([
                         <MercedesPage></MercedesPage>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/products'),
             },
             {
                 path: 'brand-porsche',
@@ -73,6 +76,7 @@ const router = createBrowserRouter([
                         <PorschePage></PorschePage>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/products'),
             },
             {
                 path: 'brand-rolls-royce',
@@ -81,6 +85,7 @@ const router = createBrowserRouter([
                         <RollsRoycePage></RollsRoycePage>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/products'),
             },
             {
                 path: 'brand-bmw',
@@ -89,6 +94,7 @@ const router = createBrowserRouter([
                         <BmwPage></BmwPage>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/products'),
             },
             
         ]

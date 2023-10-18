@@ -1,10 +1,14 @@
+import { useLoaderData } from "react-router-dom";
 import Audi from "../../Components/Audi/Audi";
 
 
 const AudiPage = () => {
+
+    const products = useLoaderData();
+
     return (
         <div>
-            <Audi></Audi>
+            <Audi products={products}></Audi>
         </div>
     );
 };
