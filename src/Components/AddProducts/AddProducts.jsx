@@ -19,26 +19,38 @@ const AddProducts = () => {
 
         console.log(newProduct);
 
-        // send data to the server
-        fetch('http://localhost:5000/products', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newProduct)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.insertedId){
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Coffee Added Successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Okay'
-                      })
-                }
+        if (!name || !brand || !type || !price || !shortDescription || !rating || !photo) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Please fill in all required fields.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+            return
+        } else {
+            const newProduct = { name, brand, type, price, shortDescription, rating, photo };
+
+            // send data to the server
+            fetch('http://localhost:5000/products', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newProduct)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.insertedId) {
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Coffee Added Successfully',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                });
+        }
     }
 
     return (
@@ -61,9 +73,19 @@ const AddProducts = () => {
                                 <span className="label-text">Brand Name</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="brand" placeholder="Brand Name" className="input input-bordered w-full" />
+                                <select name="brand" className="input input-bordered w-full">
+                                    <option value="" disabled selected>Select Brand Name</option>
+                                    <option value="ferrari">Ferrari</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="porsche">Porsche</option>
+                                    <option value="rolls-royce">Rolls Royce</option>
+                                    <option value="bmw">BMW</option>
+                                </select>
                             </label>
                         </div>
+
+
                     </div>
                     {/* type and price row */}
                     <div className="md:flex mb-8">

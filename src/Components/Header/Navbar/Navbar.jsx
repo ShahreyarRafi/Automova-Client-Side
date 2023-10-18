@@ -24,7 +24,7 @@ const Navbar = () => {
                         <img className='w-16' src={logoWhite} alt="" />
                         <a
                             className="text-2xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                            href="#pablo"
+                            href="/"
                         >
                             AUTOMOVA
                         </a>
@@ -66,24 +66,24 @@ const Navbar = () => {
                                 {user ? (
                                     <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
                                         <NavLink
-                                            to="/test"
+                                            to="/test-1"
                                             className={({ isActive, isPending }) =>
                                                 isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
                                             }
                                         >
-                                            ADD C
+                                            PAGE-1
                                         </NavLink>
                                     </li>
                                 ) : null}
 
                                 <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
                                     <NavLink
-                                        to="/2"
+                                        to="/test-2"
                                         className={({ isActive, isPending }) =>
                                             isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
                                         }
                                     >
-                                        PAGE-1
+                                        PAGE-2
                                     </NavLink>
                                 </li>
 

@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import cardTestImg from '../../assets/images/cardTest.png'
-import Glide from '@glidejs/glide';
+
 
 
 
 
 
 const Cards = ({ products }) => {
-
-
-
-
-
-
-
 
     return (
         <div className='bg-[#eef2fa]'>
