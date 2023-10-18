@@ -20,68 +20,93 @@ const Cards = ({ products }) => {
         <div className='bg-[#eef2fa]'>
             <div className='font-primary'>
 
+                {/* [#090b11] */}
 
-
-                <div className="w-full bg-[#0e151e]">
+                <div className="w-full bg-black">
                     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
                         <div className="text-center pb-12">
                             <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-white">
-                                Check our awesome team memwhite
+                                Top Brands
                             </h1>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div className="w-full bg-[#1c2632] rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
                                 <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/3f86v5c/Untitled-design-32.png" alt="photo"/>
+                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/3f86v5c/Untitled-design-32.png" alt="photo" />
                                 </div>
                                 <div className="text-center">
                                     <p className="text-xl text-white font-bold mb-2">Ferrari</p>
-                                    <p className="text-base text-gray-400 font-normal">Software Engineer</p>
+                                    <Link to={'/brand-ferrari'}>
+                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
+                                            <p>Show Cars</p>
+                                        </div>
+                                    </Link>
                                 </div>
+
                             </div>
-                            <div className="w-full bg-[#1c2632] rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
                                 <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/JRPZk05/Untitled-design-33.png" alt="photo"/>
+                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/JRPZk05/Untitled-design-33.png" alt="photo" />
                                 </div>
                                 <div className="text-center">
                                     <p className="text-xl text-white font-bold mb-2">Audi</p>
-                                    <p className="text-base text-gray-400 font-normal">Graphic Designer</p>
+                                    <Link to={'/brand-audi'}>
+                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
+                                            <p>Show Cars</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
-                            <div className="w-full bg-[#1c2632] rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
                                 <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SrPJ9J5/Untitled-design-31.png" alt="photo"/>
+                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SrPJ9J5/Untitled-design-31.png" alt="photo" />
                                 </div>
                                 <div className="text-center">
                                     <p className="text-xl text-white font-bold mb-2">Mercedes</p>
-                                    <p className="text-base text-gray-400 font-normal">Dev Ops</p>
+                                    <Link to={'/brand-mercedes'}>
+                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
+                                            <p>Show Cars</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
-                            <div className="w-full bg-[#1c2632] rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
                                 <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/51WXmNG/Untitled-design-34.png" alt="photo"/>
+                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/51WXmNG/Untitled-design-34.png" alt="photo" />
                                 </div>
                                 <div className="text-center">
                                     <p className="text-xl text-white font-bold mb-2">Porsche</p>
-                                    <p className="text-base text-gray-400 font-normal">Software Engineer</p>
+                                    <Link to={'/brand-porsche'}>
+                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
+                                            <p>Show Cars</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
-                            <div className="w-full bg-[#1c2632] rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
                                 <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SNGL3T6/Untitled-design-29.png" alt="photo"/>
+                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SNGL3T6/Untitled-design-29.png" alt="photo" />
                                 </div>
                                 <div className="text-center">
                                     <p className="text-xl text-white font-bold mb-2">Rolls Royce</p>
-                                    <p className="text-base text-gray-400 font-normal">Graphic Designer</p>
+                                    <Link to={'/brand-rolls-royce'}>
+                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
+                                            <p>Show Cars</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
-                            <div className="w-full bg-[#1c2632] rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
                                 <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/PgjKzn0/bmw.png" alt="photo"/>
+                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/PgjKzn0/bmw.png" alt="photo" />
                                 </div>
-                                <div className="text-center">
+                                <div className="w-full text-center">
                                     <p className="text-xl text-white font-bold mb-2">BMW</p>
-                                    <p className="text-base text-gray-400 font-normal">Dev Ops</p>
+                                    <Link to={'/brand-bmw'}>
+                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
+                                            <p>Show Cars</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

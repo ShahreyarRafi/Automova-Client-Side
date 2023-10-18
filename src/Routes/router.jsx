@@ -6,6 +6,13 @@ import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddProductPage from "../Pages/AddProductPage/AddProductPage";
+import FerrariPage from "../Pages/FerrariPage/FerrariPage";
+import MercedesPage from "../Pages/MercedesPage/MercedesPage";
+import AudiPage from "../Pages/AudiPage/AudiPage";
+import PorschePage from "../Pages/PorschePage/PorschePage";
+import RollsRoycePage from "../Pages/RollsRoycePage/RollsRoycePage";
+import BmwPage from "../Pages/BmwPage/BmwPage";
+
 
 
 const router = createBrowserRouter([
@@ -35,6 +42,55 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
             },
+            {
+                path: 'brand-ferrari',
+                element: (
+                    <PrivateRoute>
+                        <FerrariPage></FerrariPage>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: 'brand-audi',
+                element: (
+                    <PrivateRoute>
+                        <AudiPage></AudiPage>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: 'brand-mercedes',
+                element: (
+                    <PrivateRoute>
+                        <MercedesPage></MercedesPage>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: 'brand-porsche',
+                element: (
+                    <PrivateRoute>
+                        <PorschePage></PorschePage>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: 'brand-rolls-royce',
+                element: (
+                    <PrivateRoute>
+                        <RollsRoycePage></RollsRoycePage>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: 'brand-bmw',
+                element: (
+                    <PrivateRoute>
+                        <BmwPage></BmwPage>
+                    </PrivateRoute>
+                ),
+            },
+            
         ]
     }
 ])
