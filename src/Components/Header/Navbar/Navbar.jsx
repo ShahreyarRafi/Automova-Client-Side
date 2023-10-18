@@ -71,7 +71,7 @@ const Navbar = () => {
                                                 isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
                                             }
                                         >
-                                            TEST ROUTE
+                                            ADD C
                                         </NavLink>
                                     </li>
                                 ) : null}
@@ -149,7 +149,18 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 )}
+                                <li className="nav-item px-3 py-2 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
+                                    <NavLink
+                                        to="/add-product"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                        }
+                                    >
+                                        + ADD PRODUCT
+                                    </NavLink>
+                                </li>
                             </ul>
+
                         </div>
 
                     </div>

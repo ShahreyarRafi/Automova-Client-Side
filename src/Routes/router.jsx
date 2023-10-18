@@ -5,7 +5,7 @@ import Home from "../Pages/HomePage/Home";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import TestPage from "../Pages/Test/TestPage";
+import AddProductPage from "../Pages/AddProductPage/AddProductPage";
 
 
 const router = createBrowserRouter([
@@ -27,10 +27,10 @@ const router = createBrowserRouter([
                 element:<LoginPage></LoginPage>
             },
             {
-                path: 'test',
+                path: 'add-product',
                 element: (
                     <PrivateRoute>
-                        <TestPage></TestPage>
+                        <AddProductPage></AddProductPage>
                     </PrivateRoute>
                 ),
             },
