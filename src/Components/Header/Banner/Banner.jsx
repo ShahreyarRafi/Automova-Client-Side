@@ -51,12 +51,12 @@ const Banner = () => {
                         </div>
                         <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <div className="flex flex-col items-center justify-center h-[88vh]">
-                                <h2 className="xl:text-7xl md:text-5xl text-3xl font-rubik font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8">
+                                <h2 className="xl:text-7xl md:text-5xl text-3xl tracking-tigh font-primary font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8">
                                     Find Your <span className="text-[#FF9D00]">Perfect</span> Car
                                 </h2>
                                 <div>
                                     <Link to="/register">
-                                        <button className="bg-[#FF9D00] font-rubik font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape">
+                                        <button className="bg-[#FF9D00] font-primary font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape">
                                             Join Us Now!
                                         </button>
                                     </Link>

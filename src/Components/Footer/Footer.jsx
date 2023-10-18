@@ -109,7 +109,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div
-                    className="w-full p-4 font-rubik text-sm text-center"
+                    className="w-full p-4 font-primary text-sm text-center"
                     style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
                     © 2023 Copyright:
                     <a className="text-white ml-2" href="/">

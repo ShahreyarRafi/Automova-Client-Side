@@ -59,7 +59,7 @@ const Login = () => {
     return (
         <div>
             <div className='flex items-center justify-center'>
-                <section className="gradient-form h-full dark:bg-neutral-700 font-rubik">
+                <section className="gradient-form h-full dark:bg-neutral-700 font-primary">
                     <div className="h-full">
                         <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
                             <div className="w-full">
