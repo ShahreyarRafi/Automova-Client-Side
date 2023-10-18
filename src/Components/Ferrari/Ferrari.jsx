@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Ferrari = ({ products }) => {
-    // Filter the products by the brand "Ferrari" (case-insensitive)
+
     const ferrariProducts = products.filter(product => product.brand.toLowerCase() === "ferrari");
 
     return (
