@@ -3,11 +3,16 @@ import Navbar from "../Components/Header/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
 
+
 const Root = () => {
     return (
         <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className="fixed top-0 w-full z-50">
+                <Navbar></Navbar>
+            </div>
+            <div className="mt-[87px]">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

@@ -15,7 +15,7 @@ const Navbar = () => {
         logout();
     }
 
-
+    
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black font-primary ">
             <div className="w-full px-7 mx-auto flex flex-wrap items-center justify-between">
