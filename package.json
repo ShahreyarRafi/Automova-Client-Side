@@ -18,6 +18,7 @@
     "react-router-dom": "^6.17.0",
     "sort-by": "^1.2.0",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.7.32",
     "tw-elements": "^1.0.0"
   },
   "devDependencies": {

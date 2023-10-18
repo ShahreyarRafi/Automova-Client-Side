@@ -19,7 +19,7 @@ const Navbar = () => {
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black font-primary ">
             <div className="w-full px-7 mx-auto flex flex-wrap items-center justify-between">
-                <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                <div className="w-full relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start">
                     <div className='flex items-center gap-4 mr-5'>
                         <img className='w-16' src={logoWhite} alt="" />
                         <a
@@ -48,7 +48,7 @@ const Navbar = () => {
                     }
                     id="example-navbar-danger"
                 >
-                    <div className='w-full flex justify-between'>
+                    <div className='w-full flex justify-between items-center'>
                         <div>
                             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
 
@@ -149,14 +149,14 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 )}
-                                <li className="nav-item px-3 py-2 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
+                                <li className="nav-item  mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
                                     <NavLink
                                         to="/add-product"
                                         className={({ isActive, isPending }) =>
                                             isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
                                         }
                                     >
-                                        + ADD PRODUCT
+                                        <p className='flex items-center mx-3 my-2'><span className='text-2xl mr-2'>+</span><span>ADD PRODUCT</span></p>
                                     </NavLink>
                                 </li>
                             </ul>
