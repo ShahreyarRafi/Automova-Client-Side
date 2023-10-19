@@ -16,6 +16,7 @@ import PorschePage from "../Pages/PorschePage/PorschePage";
 import RollsRoycePage from "../Pages/RollsRoycePage/RollsRoycePage";
 import BmwPage from "../Pages/BmwPage/BmwPage";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
+import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: 'contact-us',
                 element: <ContactUsPage></ContactUsPage>
+            },
+            {
+                path: 'about-us',
+                element: <AboutUsPage></AboutUsPage>
             },
             {
                 path: 'cart',

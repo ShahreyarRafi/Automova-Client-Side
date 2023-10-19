@@ -75,19 +75,16 @@ const Navbar = () => {
                                         CONTACT US
                                     </NavLink>
                                 </li>
-
-                                {user ? (
-                                    <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
-                                        <NavLink
-                                            to="/test-1"
-                                            className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
-                                            }
-                                        >
-                                            PAGE-1
-                                        </NavLink>
-                                    </li>
-                                ) : null}
+                                <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
+                                    <NavLink
+                                        to="/about-us"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                        }
+                                    >
+                                        ABOUT US
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
 
