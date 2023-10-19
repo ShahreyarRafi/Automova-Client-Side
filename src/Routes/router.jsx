@@ -4,6 +4,7 @@ import Root from "../Layout/Root";
 import Home from "../Pages/HomePage/Home";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
+import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddProductPage from "../Pages/AddProductPage/AddProductPage";
 import FerrariPage from "../Pages/FerrariPage/FerrariPage";
@@ -14,6 +15,7 @@ import RollsRoycePage from "../Pages/RollsRoycePage/RollsRoycePage";
 import BmwPage from "../Pages/BmwPage/BmwPage";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import UpdatePage from "../Pages/UpdatePage/UpdatePage";
+
 
 
 
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <LoginPage></LoginPage>
+            },
+            {
+                path: 'contact-us',
+                element: <ContactUsPage></ContactUsPage>
             },
             {
                 path: 'add-product',
