@@ -13,6 +13,7 @@ import PorschePage from "../Pages/PorschePage/PorschePage";
 import RollsRoycePage from "../Pages/RollsRoycePage/RollsRoycePage";
 import BmwPage from "../Pages/BmwPage/BmwPage";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
+import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 
 
 
@@ -105,6 +106,15 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: () => fetch('http://localhost:5000/products'),
+            },
+            {
+                path: 'update-product/:id',
+                element: (
+                    <PrivateRoute>
+                        <UpdatePage></UpdatePage>
+                    </PrivateRoute>
+                ),
+                loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
             },
 
         ]
