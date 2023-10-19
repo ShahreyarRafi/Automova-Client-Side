@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import logoWhite from '/AUTOMOVA_WHITE.png'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import userPicPlaceholder from '../../../assets/images/userPicPlaceHolder.png'
+import basketImg from '../../../assets/images/basket.png'
 
 import { useContext } from "react";
 import { AuthContext } from "../../../services/Firebase/AuthProvider";
@@ -15,7 +16,7 @@ const Navbar = () => {
         logout();
     }
 
-    
+
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black font-primary ">
             <div className="w-full px-7 mx-auto flex flex-wrap items-center justify-between">
@@ -63,30 +64,30 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
 
-                                {user ? (
-                                    <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
-                                        <NavLink
-                                            to="/contact-us"
-                                            className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
-                                            }
-                                        >
-                                            CONTACT US
-                                        </NavLink>
-                                    </li>
-                                ) : null}
 
                                 <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
                                     <NavLink
-                                        to="/test-1"
+                                        to="/contact-us"
                                         className={({ isActive, isPending }) =>
                                             isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
                                         }
                                     >
-                                        PAGE-1
+                                        CONTACT US
                                     </NavLink>
                                 </li>
 
+                                {user ? (
+                                    <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
+                                        <NavLink
+                                            to="/test-1"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                            }
+                                        >
+                                            PAGE-1
+                                        </NavLink>
+                                    </li>
+                                ) : null}
                             </ul>
                         </div>
 
@@ -149,15 +150,24 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 )}
-                                <li className="nav-item  mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
-                                    <NavLink
-                                        to="/add-product"
-                                        className={({ isActive, isPending }) =>
-                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
-                                        }
-                                    >
-                                        <p className='flex items-center mx-3 my-2'><span className='text-2xl mr-2'>+</span><span>ADD PRODUCT</span></p>
-                                    </NavLink>
+                                <li className='flex items-center md:gap-7'>
+                                    <li className="nav-item my-1 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
+                                        <NavLink
+                                            to="/add-product"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                            }
+                                        >
+                                            <p className='flex items-center mx-3 my-2'><span className='text-2xl mr-2'>+</span><span>ADD PRODUCT</span></p>
+                                        </NavLink>
+                                    </li>
+                                    {user && (
+                                        <li className="w-14">
+                                            <Link to="/cart">
+                                                <img src={basketImg} alt="" />
+                                            </Link>
+                                        </li>
+                                    )}
                                 </li>
                             </ul>
 

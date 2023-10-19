@@ -5,8 +5,10 @@ import Home from "../Pages/HomePage/Home";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
+import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddProductPage from "../Pages/AddProductPage/AddProductPage";
+import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 import FerrariPage from "../Pages/FerrariPage/FerrariPage";
 import MercedesPage from "../Pages/MercedesPage/MercedesPage";
 import AudiPage from "../Pages/AudiPage/AudiPage";
@@ -14,7 +16,8 @@ import PorschePage from "../Pages/PorschePage/PorschePage";
 import RollsRoycePage from "../Pages/RollsRoycePage/RollsRoycePage";
 import BmwPage from "../Pages/BmwPage/BmwPage";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
-import UpdatePage from "../Pages/UpdatePage/UpdatePage";
+
+
 
 
 
@@ -41,6 +44,14 @@ const router = createBrowserRouter([
             {
                 path: 'contact-us',
                 element: <ContactUsPage></ContactUsPage>
+            },
+            {
+                path: 'cart',
+                element: (
+                    <PrivateRoute>
+                        <CartPage></CartPage>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: 'add-product',
@@ -120,7 +131,7 @@ const router = createBrowserRouter([
                         <UpdatePage></UpdatePage>
                     </PrivateRoute>
                 ),
-                loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
             },
 
         ]
