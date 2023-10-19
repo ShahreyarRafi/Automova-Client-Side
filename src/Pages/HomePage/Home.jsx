@@ -10,10 +10,10 @@ const Home = () => {
 
     return (
         <div>
-           <Banner></Banner>
-           {/* <h2 className='text-2xl font-semibold font-primary'> Total Products: {products.length}</h2> */}
-           <Cards products={products}></Cards>
-           <WhyUs></WhyUs>
+            <Banner></Banner>
+            {/* <h2 className='text-2xl font-semibold font-primary'> Total Products: {products.length}</h2> */}
+            <Cards products={products}></Cards>
+            <WhyUs></WhyUs>
         </div>
     );
 };

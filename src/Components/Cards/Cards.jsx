@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom';
 
 
-
-
-
-
 const Cards = ({ products }) => {
 
     return (
@@ -20,92 +16,85 @@ const Cards = ({ products }) => {
                                 Top Brands
                             </h1>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
-                                <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/3f86v5c/Untitled-design-32.png" alt="photo" />
-                                </div>
-                                <div className="text-center">
-                                    <p className="text-xl text-white font-bold mb-2">Ferrari</p>
-                                    <Link to={'/brand-ferrari'}>
-                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
-                                            <p>Show Cars</p>
-                                        </div>
-                                    </Link>
-                                </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+                            <Link to={'/brand-ferrari'}>
+                                <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
+                                    <div className="mb-8">
+                                        <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/3f86v5c/Untitled-design-32.png" alt="photo" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xl text-white font-bold mb-2">Ferrari</p>
 
-                            </div>
-                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
-                                <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/JRPZk05/Untitled-design-33.png" alt="photo" />
+                                    </div>
                                 </div>
-                                <div className="text-center">
-                                    <p className="text-xl text-white font-bold mb-2">Audi</p>
-                                    <Link to={'/brand-audi'}>
-                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
-                                            <p>Show Cars</p>
-                                        </div>
-                                    </Link>
+                            </Link>
+                            <Link to={'/brand-audi'}>
+                                <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
+                                    <div className="mb-8">
+                                        <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/JRPZk05/Untitled-design-33.png" alt="photo" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xl text-white font-bold mb-2">Audi</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
-                                <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SrPJ9J5/Untitled-design-31.png" alt="photo" />
+                            </Link>
+                            <Link to={'/brand-mercedes'}>
+                                <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
+                                    <div className="mb-8">
+                                        <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SrPJ9J5/Untitled-design-31.png" alt="photo" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xl text-white font-bold mb-2">Mercedes</p>
+
+                                    </div>
                                 </div>
-                                <div className="text-center">
-                                    <p className="text-xl text-white font-bold mb-2">Mercedes</p>
-                                    <Link to={'/brand-mercedes'}>
-                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
-                                            <p>Show Cars</p>
-                                        </div>
-                                    </Link>
+                            </Link>
+                            <Link to={'/brand-porsche'}>
+                                <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
+                                    <div className="mb-8">
+                                        <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/51WXmNG/Untitled-design-34.png" alt="photo" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xl text-white font-bold mb-2">Porsche</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
-                                <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/51WXmNG/Untitled-design-34.png" alt="photo" />
+                            </Link>
+                            <Link to={'/brand-rolls-royce'}>
+                                <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
+                                    <div className="mb-8">
+                                        <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SNGL3T6/Untitled-design-29.png" alt="photo" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xl text-white font-bold mb-2">Rolls Royce</p>
+                                    </div>
                                 </div>
-                                <div className="text-center">
-                                    <p className="text-xl text-white font-bold mb-2">Porsche</p>
-                                    <Link to={'/brand-porsche'}>
-                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
-                                            <p>Show Cars</p>
-                                        </div>
-                                    </Link>
+                            </Link>
+                            <Link to={'/brand-bmw'}>
+                                <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
+                                    <div className="mb-8">
+                                        <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/PgjKzn0/bmw.png" alt="photo" />
+                                    </div>
+                                    <div className="w-full text-center">
+                                        <p className="text-xl text-white font-bold mb-2">BMW</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
-                                <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SNGL3T6/Untitled-design-29.png" alt="photo" />
-                                </div>
-                                <div className="text-center">
-                                    <p className="text-xl text-white font-bold mb-2">Rolls Royce</p>
-                                    <Link to={'/brand-rolls-royce'}>
-                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
-                                            <p>Show Cars</p>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="w-full bg-[#090b11] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center">
-                                <div className="mb-8">
-                                    <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/PgjKzn0/bmw.png" alt="photo" />
-                                </div>
-                                <div className="w-full text-center">
-                                    <p className="text-xl text-white font-bold mb-2">BMW</p>
-                                    <Link to={'/brand-bmw'}>
-                                        <div className=" px-3 py3 flex items-center justify-center text-sm font-medium leading-snug hover:opacity-75 text-[#FF9D00] hover:cursor-pointer">
-                                            <p>Show Cars</p>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     </section>
                 </div>
 
 
-                {/* <div className='container grid grid-cols-4 gap-5 mx-auto px-4'>
+
+            </div>
+        </div>
+    );
+};
+
+export default Cards;
+
+
+
+{/* <div className='container grid grid-cols-4 gap-5 mx-auto px-4'>
                     <div className="w-[360px] bg-[#222633] shadow-xl font-primary relative rounded-lg ">
                         <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg ">
                             <span className="font-semibold">Featured</span>
@@ -395,9 +384,3 @@ const Cards = ({ products }) => {
                         </div>
                     </div>
                 </div> */}
-            </div>
-        </div>
-    );
-};
-
-export default Cards;
