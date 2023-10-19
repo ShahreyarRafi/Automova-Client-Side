@@ -2,7 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 const AddProducts = () => {
-    const handleAddCoffee = event => {
+    const handleAddProduct = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -41,10 +41,10 @@ const AddProducts = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    if (data.insertedId) {
+                    if (data.insertedId > 0) {
                         Swal.fire({
                             title: 'Success!',
-                            text: 'Coffee Added Successfully',
+                            text: 'Product Added Successfully',
                             icon: 'success',
                             confirmButtonText: 'OK'
                         });
@@ -57,7 +57,7 @@ const AddProducts = () => {
         <div>
             <div className="bg-[#eef2fa] p-24 font-primary">
                 <h2 className="text-3xl font-extrabold">ADD A PRODUCT</h2>
-                <form onSubmit={handleAddCoffee}>
+                <form onSubmit={handleAddProduct}>
                     {/* name and brand row */}
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
@@ -147,7 +147,7 @@ export default AddProducts;
 // <div>
         //     <div className="bg-[#eef2fa] p-24 font-primary bg-[#12141b]">
         //         <h2 className="text-3xl font-extrabold text-gray-300">ADD A PRODUCT</h2>
-        //         <form onSubmit={handleAddCoffee}>
+        //         <form onSubmit={handleAddProduct}>
         //             {/* name and brand row */}
         //             <div className="md:flex mb-8 ">
         //                 <div className="form-control md:w-1/2">
