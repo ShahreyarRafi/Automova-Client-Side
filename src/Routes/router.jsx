@@ -12,6 +12,7 @@ import AudiPage from "../Pages/AudiPage/AudiPage";
 import PorschePage from "../Pages/PorschePage/PorschePage";
 import RollsRoycePage from "../Pages/RollsRoycePage/RollsRoycePage";
 import BmwPage from "../Pages/BmwPage/BmwPage";
+import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 
 
 
@@ -19,20 +20,20 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
-                element:<Home></Home>,
+                element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/products')
             },
             {
                 path: 'register',
-                element:<RegisterPage></RegisterPage>
+                element: <RegisterPage></RegisterPage>
             },
             {
                 path: 'login',
-                element:<LoginPage></LoginPage>
+                element: <LoginPage></LoginPage>
             },
             {
                 path: 'add-product',
@@ -96,7 +97,16 @@ const router = createBrowserRouter([
                 ),
                 loader: () => fetch('http://localhost:5000/products'),
             },
-            
+            {
+                path: 'details/:id',
+                element: (
+                    <PrivateRoute>
+                        <DetailsPage></DetailsPage>
+                    </PrivateRoute>
+                ),
+                loader: () => fetch('http://localhost:5000/products'),
+            },
+
         ]
     }
 ])

@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Ferrari = ({ products }) => {
 
     const ferrariProducts = products.filter(product => product.brand.toLowerCase() === "ferrari");
+
+    
 
     return (
         <div>
@@ -19,6 +22,11 @@ const Ferrari = ({ products }) => {
                                 <p>{product.description}</p>
                                 <p>Rating: {product.rating}</p>
                                 <img src={product.photo} alt={product.name} />
+                                <div className='text-center text-lg font-bold mt-3'>
+                                    <Link to={`/details/${product._id}`}>
+                                        <a>Details</a>
+                                    </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
