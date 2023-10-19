@@ -46,7 +46,7 @@ const UpdatePage = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    if (data.modifiedCount) {
+                    if (data.modifiedCount > 0) {
                         Swal.fire({
                             title: 'Success!',
                             text: 'Product Updated Successfully',
@@ -76,11 +76,11 @@ const UpdatePage = () => {
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
-                                <span className="label-text" >Brand Name</span>
+                                <span className="label-text">Brand Name</span>
                             </label>
                             <label className="rounded-lg">
-                                <select name="brand" className="input input-bordered w-full">
-                                    <option value="" disabled selected>{brand}</option>
+                                <select name="brand" className="input input-bordered w-full" defaultValue={brand.toLowerCase()}>
+                                    <option value="" disabled>Select a Brand</option>
                                     <option value="ferrari">Ferrari</option>
                                     <option value="audi">Audi</option>
                                     <option value="mercedes">Mercedes</option>
@@ -90,6 +90,8 @@ const UpdatePage = () => {
                                 </select>
                             </label>
                         </div>
+
+
                     </div>
                     {/* type and price row */}
                     <div className="md:flex mb-8">
@@ -140,7 +142,7 @@ const UpdatePage = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Add Product" className="btn hover:bg-[#ffc362] w-full text-white text-lg bg-[#FF9D00]" />
+                    <input type="submit" value="Update Product" className="btn hover:bg-[#ffc362] w-full text-white text-lg bg-[#FF9D00]" />
                 </form>
             </div>
         </div>
