@@ -51,20 +51,21 @@ const router = createBrowserRouter([
                 element: <AboutUsPage></AboutUsPage>
             },
             {
-                path: 'cart',
-                element: (
-                    <PrivateRoute>
-                        <CartPage></CartPage>
-                    </PrivateRoute>
-                ),
-            },
-            {
                 path: 'add-product',
                 element: (
                     <PrivateRoute>
                         <AddProductPage></AddProductPage>
                     </PrivateRoute>
                 ),
+            },
+            {
+                path: 'cart',
+                element: (
+                    <PrivateRoute>
+                        <CartPage></CartPage>
+                    </PrivateRoute>
+                ),
+                loader: () => fetch('http://localhost:5000/cartItems'),
             },
             {
                 path: 'brand-ferrari',
