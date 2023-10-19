@@ -147,7 +147,7 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 )}
-                                <li className='flex items-center md:gap-7'>
+                                <li className='flex items-center md:gap-6'>
                                     <li className="nav-item my-1 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
                                         <NavLink
                                             to="/add-product"

@@ -6,7 +6,6 @@ const FerrariPage = () => {
 
     const products = useLoaderData();
     
-
     return (
         <div>
             <Ferrari products={products}></Ferrari>
