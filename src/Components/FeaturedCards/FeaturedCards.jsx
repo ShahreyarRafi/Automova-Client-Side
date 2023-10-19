@@ -9,22 +9,22 @@ const FeaturedCards = ({ products }) => {
 
 
 
-
+    // bg-[#0f1116] 
     return (
-        <div>
-            <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12'>
+        <div className='bg-[#090b11]'>
+            <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-4 py-12'>
                 {featuredProducts.length > 0 ? (
                     <div>
-                        <h2 className='text-2xl font-semibold font-primary'>Featured Products: {featuredProducts.length}</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6 ">
-                            {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 6).map((product, index) => (
-                                <div key={product._id} className="w-[360px] bg-[#222633] shadow-xl font-primary relative rounded-lg">
+                        <h2 className='text-5xl text-center mb-12 text-gray-100 font-bold font-primary'>Featured Cars</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product, index) => (
+                                <div key={product._id} className=" font-primary relative    w-full bg-[#1f2229] rounded-lg shadow-lg">
                                     <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
                                         <span className="font-semibold">Featured</span>
                                     </div>
                                     <figure className="relative overflow-hidden rounded-t-lg">
                                         <img
-                                            className='transform hover:scale-110 transition-transform duration-1000 object-cover h-52 w-full'
+                                            className='transform hover:scale-110 transition-transform duration-1000 object-cover h-96 w-full'
                                             style={{ transformOrigin: 'center center' }}
                                             src={product.photo}
                                             alt={product.name} // Use the product name as alt text
@@ -43,7 +43,7 @@ const FeaturedCards = ({ products }) => {
                                         </div>
                                     </div>
                                     <div className="card-actions justify-center border-t border-[#353a4a]">
-                                        <Link to={`/product/${product._id}`}>
+                                        <Link to={`/details/${product._id}`}>
                                             <button
                                                 className='font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3 w-full'>
                                                 SHOW DETAILS
@@ -53,13 +53,15 @@ const FeaturedCards = ({ products }) => {
                                 </div>
                             ))}
                         </div>
-                        {featuredProducts.length > 6 && (
-                            <button
-                                className="text-blue-500 cursor-pointer"
-                                onClick={() => setShowAllCards(!showAllCards)}
-                            >
-                                {showAllCards ? 'Show Less' : 'Show More'}
-                            </button>
+                        {featuredProducts.length > 3 && (
+                            <div className='flex justify-center py-10'>
+                                <button
+                                    className="text-white text-md font-medium cursor-pointer bg-[#FF9D00] py-4 px-8 rounded-md"
+                                    onClick={() => setShowAllCards(!showAllCards)}
+                                >
+                                    {showAllCards ? 'Show Less' : 'Show More'}
+                                </button>
+                            </div>
                         )}
                     </div>
                 ) : (
