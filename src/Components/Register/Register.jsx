@@ -47,7 +47,7 @@ const Register = () => {
                                         <div
                                             className="flex items-center rounded-b-none lg:w-6/12 lg:rounded-l-lg lg:rounded-bl-lg"
                                             style={{
-                                                background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/wRjj9qx/register11.png")',
+                                                background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/rHck9hp/test1000px.png")',
                                                 backgroundSize: 'cover',
                                             }}
                                         >
@@ -106,14 +106,12 @@ const Register = () => {
                                                     </div>
                                                     <div className="mb-12 pb-1 pt-1 text-center">
                                                         <button
-                                                            className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                                                            className=" bg-[#FF9D00]  mb-4 inline-block w-full px-6 pb-2 pt-2.5 text-sm font-semibold uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
                                                             type="button"
                                                             onClick={handleRegister}
                                                             data-te-ripple-init
                                                             data-te-ripple-color="light"
-                                                            style={{
-                                                                background: "linear-gradient(135deg, #333333, #ff3333)"
-                                                            }}>
+                                                        >
                                                             SIGN UP
                                                         </button>
                                                         <div>
