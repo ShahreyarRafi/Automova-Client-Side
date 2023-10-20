@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Cart = ({ cartItems }) => {
+
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
     const handleDelete = (e, cartItemsId) => {
         e.preventDefault();
         console.log(cartItemsId);
@@ -40,20 +45,30 @@ const Cart = ({ cartItems }) => {
     return (
 
 
-        <div className='min-h-[80vh] flex items-center justify-center px-4 py-10'>
+        <div className='font-primary min-h-[80vh] flex items-center justify-center px-4 py-10 bg-[#090b11]'>
             {cartItems.length > 0 ? (
                 <div>
                     <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
                         {cartItems.map(cartItem => (
-                            <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl">
-                                <div className="h-full w-full flex flex-col items-center border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover-bg-gray-700">
-                                    <img className="object-cover w-full rounded-t-lg h-96 md:h-full md:w-48 md:rounded-none md:rounded-l-lg" src={cartItem.photo} alt="" />
+                            <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl bg-[#1f2229] rounded text-gray-100">
+                                <div className="h-full w-full flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl dark:hover-bg-gray-700">
+                                    <img className=" object-cover w-full rounded-t-lg h-96 md:h-full md:w-60 md:rounded-none md:rounded-l-md" src={cartItem.photo} alt="" />
                                     <div className="w-full">
                                         <div className="flex flex-col justify between p-4 leading-normal">
-                                            <h5 className="md:min-w-[300px]  mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{cartItem.name}</h5>
-                                            <Link to="/" onClick={(e) => handleDelete(e, cartItem._id)}>
-                                                <a className='text-red-600'>Delete</a>
-                                            </Link>
+                                            <div className="mx-auto mb-5">
+                                                <h5 className="md:min-w-[300px] mb-2 text-2xl font-medium text-gray-100">{cartItem.name}</h5>
+                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Brand:</span> <span className="">{capitalizeFirstLetter(cartItem.brand)}</span></p>
+                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Type:</span> <span className="">{cartItem.type}</span></p>
+                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Engine Type:</span> <span className="">{cartItem.engine_type}</span></p>
+                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Transmission:</span> <span className="">{cartItem.transmission}</span></p>
+                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Drive System:</span> <span className="">{cartItem.drive_system}</span></p>
+                                                <p className=" text-slate-400 flex justify-between w-72 "><span className="">Price:</span> <span className="">${cartItem.price}</span></p>
+                                            </div>
+                                            <div className="mx-auto w-auto md:w-72">
+                                                <Link to="/" onClick={(e) => handleDelete(e, cartItem._id)}>
+                                                    <button className="bg-[#c9363f] hover:bg-[#f14e59] px-3 py-2 text-white rounded" >Remove From Cart</button>
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

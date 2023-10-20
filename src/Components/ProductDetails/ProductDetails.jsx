@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import ScrollToTop from 'react-scroll-to-top';
 import Swal from 'sweetalert2';
 
 const ProductDetails = ({ products, params }) => {
     const [product, setProduct] = useState();
     const [cart, setCart] = useState([]);
+
+    const { id } = params;
+
+    useEffect(() => {
+        const findProduct = products?.find(product => product._id === id);
+        setProduct(findProduct);
+    }, [id, products]);
+
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
 
     const handleAddToCart = () => {
         const productWithoutId = { ...product };
@@ -45,17 +55,6 @@ const ProductDetails = ({ products, params }) => {
         }
     };
 
-    const { id } = params;
-
-    useEffect(() => {
-        const findProduct = products?.find(product => product._id === id);
-        setProduct(findProduct);
-    }, [id, products]);
-
-    function capitalizeFirstLetter(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    }
-
     return (
         <div>
             {product ? (
@@ -85,24 +84,21 @@ const ProductDetails = ({ products, params }) => {
                                 <table className="table text-white text-center text-lg max-w-5xl">
                                     {/* head */}
                                     <thead className='text-white text-lg'>
-                                        <tr >
+                                        <tr>
                                             <th>Features</th>
                                             <th>Details</th>
                                         </tr>
                                     </thead>
-                                    <tbody >
-                                        {/* row 1 */}
+                                    <tbody>
                                         <tr>
                                             <th>Brand</th>
                                             <td>{capitalizeFirstLetter(product.brand)}</td>
                                         </tr>
-                                        {/* row 2 */}
                                         <tr >
                                             <th>Type</th>
                                             <td>{product.type}</td>
 
                                         </tr>
-                                        {/* row 3 */}
                                         <tr>
                                             <th>Engine Type</th>
                                             <td>{product.engine_type}</td>
@@ -145,9 +141,9 @@ const ProductDetails = ({ products, params }) => {
             ) : (
                 <p>Loading...</p>
             )}
-            
+
         </div>
-        
+
     );
 };
 
