@@ -63,7 +63,7 @@ const Cart = ({ cartItems }) => {
                 </div>
             ) : (
                 <div className='h-[80vh] flex items-center justify-center'>
-                    <p className='text-2xl font-bold font-primary'>No products found</p>
+                    <p className='text-2xl font-bold font-primary'>Empty Cart</p>
                 </div>
             )}
         </div>
