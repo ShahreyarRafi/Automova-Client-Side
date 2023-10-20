@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './Banner.css'; // Import your CSS styles here
 import images from './images'; // Import an array of image paths
 
+
+
+
 const Banner = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isFadingOut, setIsFadingOut] = useState(false);
