@@ -5,13 +5,10 @@ import './Ferrari.css'
 
 
 import React, { useState, useEffect, useMemo } from 'react';
-import image1 from '../../assets/images/mrcdsbf.jpg';
-import image2 from '../../assets/images/bmwfw.png';
-import image3 from '../../assets/images/lmbrgnbb.png';
-import image4 from '../../assets/images/mclrnfo.png';
-import image5 from '../../assets/images/tmk5ybt.png';
-import image6 from '../../assets/images/ar8gf.jpg';
-import image7 from '../../assets/images/ar8bf.png';
+import image1 from '../../assets/images/ferrariAds/f1.jpg';
+import image2 from '../../assets/images/ferrariAds/f2.png';
+import image3 from '../../assets/images/ferrariAds/f3.jpg';
+
 
 
 
@@ -26,7 +23,7 @@ const Ferrari = ({ products }) => {
 
 
 
-    const images = useMemo(() => [image1, image2, image3, image4, image5, image6, image7], []);
+    const images = useMemo(() => [image1, image2, image3], []);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isFadingOut, setIsFadingOut] = useState(false);
     const [isFadingIn, setIsFadingIn] = useState(false);
@@ -111,7 +108,7 @@ const Ferrari = ({ products }) => {
 
                                     <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
                                         <div className='flex flex-col items-center justify-center h-[88vh]'>
-                                            <h2 className='xl:text-7xl md:text-5xl text-3xl font-rubik font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8'><span className='text-[#FF9D00]'>Ferrari</span></h2>
+                                            <h2 className='xl:text-7xl md:text-5xl text-3xl font-rubik font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8'><span className='text-[#FF9D00]'></span></h2>
 
                                         </div>
                                     </div>
