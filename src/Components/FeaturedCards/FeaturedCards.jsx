@@ -10,7 +10,7 @@ const FeaturedCards = ({ products }) => {
     // bg-[#0f1116] 
     return (
         <div className='bg-[#090b11]'>
-            <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-4 py-12'>
+            <div className='max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-4 py-12'>
                 {featuredProducts.length > 0 ? (
                     <div>
                         <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-12 text-gray-100 font-primary'>Featured Cars</h2>

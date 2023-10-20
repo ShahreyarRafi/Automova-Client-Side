@@ -18,6 +18,7 @@ import image7 from '../../assets/images/ar8bf.png';
 
 
 
+
 const Ferrari = ({ products }) => {
     const ferrariProducts = products.filter(product => product.brand.toLowerCase() === "ferrari");
 

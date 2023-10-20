@@ -10,13 +10,13 @@ const Cards = ({ products }) => {
                 {/* [#090b11] */}
 
                 <div className="w-full bg-black">
-                    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+                    <section className="max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-4 py-12">
                         <div className="text-center pb-12">
                             <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-white">
                                 Top Brands
                             </h1>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 ">
                             <Link to={'/brand-ferrari'}>
                                 <div className="w-full bg-[#0f1116] rounded-lg shadow-lg p-12 flex flex-col justify-center items-center md:hover:scale-105 duration-300">
                                     <div className="mb-8">
@@ -65,7 +65,7 @@ const Cards = ({ products }) => {
                                         <img className="object-center object-cover rounded-full h-36 w-36" src="https://i.ibb.co/SNGL3T6/Untitled-design-29.png" alt="photo" />
                                     </div>
                                     <div className="text-center">
-                                        <p className="text-xl text-white font-bold mb-2">Rolls Royce</p>
+                                        <p className="text-xl text-white font-bold mb-2 w-36">Rolls Royce</p>
                                     </div>
                                 </div>
                             </Link>
