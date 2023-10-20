@@ -11,7 +11,7 @@ const WhyUs = () => {
                     </span>
                 </div>
                 <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-100 text-center mt-6">
-                    Why choose us?
+                    Why Choose <span>Us?</span>
                 </h1>
             </div>
             <div className='w-full flex justify-center'>

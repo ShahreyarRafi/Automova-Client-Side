@@ -77,7 +77,6 @@ const Porsche = ({ products }) => {
 
     return (
         <div className='bg-[#090b11]'>
-            <h2 className="text-2xl font-semibold font-primary">Cars Of porsche</h2>
             {porscheProducts.length > 0 ? (
                 <div>
 
@@ -114,13 +113,14 @@ const Porsche = ({ products }) => {
 
 
 
-                    <h2 className='text-2xl font-semibold font-primary'>Total Products: {porscheProducts.length}</h2>
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="max-w-[1850px] grid grid-cols-4 gap-4 py-10 mx-auto">
                         {porscheProducts.map(product => (
                             <div key={product._id} className=" font-primary relative w-full bg-[#1f2229] rounded-lg shadow-lg">
-                                <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
-                                    <span className="font-bold">Featured</span>
-                                </div>
+                                {product.featured === 'yes' && (
+                                    <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
+                                        <span className="font-bold">Featured</span>
+                                    </div>
+                                )}
                                 <div>
                                     <figure className="relative overflow-hidden rounded-t-lg">
                                         <img
@@ -170,7 +170,7 @@ const Porsche = ({ products }) => {
                     </div>
                 </div>
             ) : (
-                <div className='h-[72vh] flex items-center justify-center'>
+                <div className='h-[80vh] flex items-center justify-center text-white'>
                     <p className='text-2xl font-bold font-primary'>No products found</p>
                 </div>
             )}
