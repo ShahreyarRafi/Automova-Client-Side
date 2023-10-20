@@ -13,7 +13,7 @@ const FeaturedCards = ({ products }) => {
             <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-4 py-12'>
                 {featuredProducts.length > 0 ? (
                     <div>
-                        <h2 className='text-5xl text-center mb-12 text-gray-100 font-bold font-primary'>Featured Cars</h2>
+                        <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-12 text-gray-100 font-primary'>Featured Cars</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product, index) => (
                                 <div key={product._id} className=" font-primary relative    w-full bg-[#1f2229] rounded-lg shadow-lg">

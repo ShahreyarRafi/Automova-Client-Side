@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const WhyUs = () => {
     return (
@@ -9,7 +10,7 @@ const WhyUs = () => {
                         Insight
                     </span>
                 </div>
-                <h1 className="text-5xl font-extrabold text-white text-center mt-6">
+                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-100 text-center mt-6">
                     Why choose us?
                 </h1>
             </div>
@@ -37,21 +38,23 @@ const WhyUs = () => {
                         </h2>
                         <p className="text-sm text-gray-100 mb-3">
                             We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.                    </p>
-                        <a className="text-indigo-500 flex items-center justify-center hover:text-indigo-600" href="/">
-                            More about us icon
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </a>
+                        <Link to={'/about-us'}>
+                            <a className="text-indigo-500 flex items-center justify-center hover:text-indigo-600">
+                                More about us
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </a>
+                        </Link>
                     </div>
                     <div className="p-8 max-w-xs md:max-w-sm text-center">
                         <div className='w-full flex justify-center'>
@@ -75,21 +78,23 @@ const WhyUs = () => {
                         </h2>
                         <p className="text-sm text-gray-100 mb-3">
                             We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.                    </p>
-                        <a className="text-green-500 flex items-center justify-center hover:text-green-600" href="/">
-                            More about us icon
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </a>
+                        <Link to={'/about-us'}>
+                            <a className="text-green-500 flex items-center justify-center hover:text-green-600">
+                                More about us
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </a>
+                        </Link>
                     </div>
                     <div className="p-8 max-w-xs md:max-w-sm text-center">
                         <div className='w-full flex justify-center'>
@@ -113,21 +118,23 @@ const WhyUs = () => {
                         </h2>
                         <p className="text-sm text-gray-100 mb-3">
                             We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.                    </p>
-                        <a className="text-red-500 flex items-center justify-center hover:text-red-600" href="/">
-                            More about us icon
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010-1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </a>
+                        <Link to={'/about-us'}>
+                            <a className="text-red-500 flex items-center justify-center hover:text-red-600">
+                                More about us
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010-1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>
