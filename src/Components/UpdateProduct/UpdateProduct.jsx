@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 
 const UpdateProduct = ({ product }) => {
 
-    const { _id, name, brand, type, price, description, rating, photo, featured } = product || {};
+    const { _id, photo, name, brand, type, engine_type, transmission, fuel_type, drive_system, infotainment, seats, description, price, rating, featured } = product || {};
 
     const handleUpdateProduct = event => {
         event.preventDefault();
@@ -18,6 +18,13 @@ const UpdateProduct = ({ product }) => {
         const updatedPhoto = form.photo.value;
         const updatedFeatured = form.featured.value;
 
+        const updatedEngineType = form.engine_type.value;
+        const updatedTransmission = form.transmission.value;
+        const updatedFuelType = form.fuel_type.value;
+        const updatedDriveSystem = form.drive_system.value;
+        const updatedInfotainment = form.infotainment.value;
+        const updatedSeats = form.seats.value;
+
         const updatedProduct = {
             name: updatedName,
             brand: updatedBrand,
@@ -26,7 +33,13 @@ const UpdateProduct = ({ product }) => {
             description: updatedDescription,
             rating: updatedRating,
             photo: updatedPhoto,
-            featured: updatedFeatured
+            featured: updatedFeatured,
+            engine_type: updatedEngineType,
+            transmission: updatedTransmission,
+            fuel_type: updatedFuelType,
+            drive_system: updatedDriveSystem,
+            infotainment: updatedInfotainment,
+            seats: updatedSeats,
         };
 
         if (!updatedName || !updatedBrand || !updatedType || !updatedPrice || !updatedDescription || !updatedRating || !updatedPhoto) {
@@ -38,6 +51,7 @@ const UpdateProduct = ({ product }) => {
             });
             return;
         } else {
+            console.log("update clicked");
             // Send data to the server
             fetch(`http://localhost:5000/products/${_id}`, {
                 method: 'PUT',
@@ -46,18 +60,18 @@ const UpdateProduct = ({ product }) => {
                 },
                 body: JSON.stringify(updatedProduct)
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Product Updated Successfully',
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    });
-                }
-            });
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.modifiedCount > 0) {
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Product Updated Successfully',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                });
         }
     }
 
@@ -109,6 +123,63 @@ const UpdateProduct = ({ product }) => {
                             </label>
                             <label className="rounded-lg">
                                 <input type="text" name="price" defaultValue={price} placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* engine type and Transmission row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Engine Type</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="engine_type" defaultValue={engine_type} placeholder="Type" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Transmission</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="transmission" defaultValue={transmission} placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* Fuel Type and Drive System row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Fuel Type</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="fuel_type" defaultValue={fuel_type} placeholder="Type" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Drive System</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="drive_system" defaultValue={drive_system} placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* Infotainment and Seats row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Infotainment</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="infotainment" defaultValue={infotainment} placeholder="Type" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Seats</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="seats" defaultValue={seats} placeholder="Price" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>

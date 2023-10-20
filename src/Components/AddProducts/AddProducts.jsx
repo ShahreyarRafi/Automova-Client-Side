@@ -16,7 +16,14 @@ const AddProducts = () => {
         const photo = form.photo.value;
         const featured = form.featured.value;
 
-        const newProduct = { name, brand, type, price, description, rating, photo, featured }
+        const engine_type = form.engine_type.value;
+        const transmission = form.transmission.value;
+        const fuel_type = form.fuel_type.value;
+        const drive_system = form.drive_system.value;
+        const infotainment = form.infotainment.value;
+        const seats = form.seats.value;
+
+        const newProduct = { photo, name, brand, type, engine_type, transmission, fuel_type, drive_system, infotainment, seats, description, price, rating, featured  }
 
         console.log(newProduct);
 
@@ -29,7 +36,7 @@ const AddProducts = () => {
             });
             return
         } else {
-            const newProduct = { name, brand, type, price, description, rating, photo, featured };
+            const newProduct = { photo, name, brand, type, engine_type, transmission, fuel_type, drive_system, infotainment, seats, description, price, rating, featured };
 
             // send data to the server
             fetch('http://localhost:5000/products', {
@@ -105,6 +112,65 @@ const AddProducts = () => {
                             </label>
                         </div>
                     </div>
+
+                    {/* engine type and Transmission row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Engine Type</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="engine_type" placeholder="Type" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Transmission</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="transmission" placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* Fuel Type and Drive System row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Fuel Type</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="fuel_type" placeholder="Type" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Drive System</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="drive_system" placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* Infotainment and Seats row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Infotainment</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="infotainment" placeholder="Type" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Seats</span>
+                            </label>
+                            <label className="rounded-lg">
+                                <input type="text" name="seats" placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                    </div>
+
                     {/* description and ratings row */}
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
