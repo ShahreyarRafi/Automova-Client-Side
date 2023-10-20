@@ -6,7 +6,6 @@ const Cart = ({ cartItems }) => {
 
     const { _id, name, brand, type, price, description, rating, photo } = cartItems || {};
 
-    console.log(cartItems);
 
     const handleDelete = (e, cartItemsId) => {
         e.preventDefault();

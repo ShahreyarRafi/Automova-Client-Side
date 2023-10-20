@@ -3,7 +3,7 @@
 const AboutUsPage = () => {
     return (
         <div>
-            <section className="font-primary flex items-center bg-[#1d1b1d] xl:h-screen font-poppins dark:bg-gray-800">
+            <section className="font-primary flex items-center bg-[#0f1116] xl:h-screen font-poppins dark:bg-gray-800">
                 <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
                     <div className="flex flex-wrap">
                         <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">

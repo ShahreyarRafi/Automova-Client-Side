@@ -5,8 +5,6 @@ const FeaturedCards = ({ products }) => {
     const [showAllCards, setShowAllCards] = useState(false);
 
     const featuredProducts = products?.filter(product => product?.featured?.toLowerCase() === "yes");
-    console.log(featuredProducts);
-
 
 
     // bg-[#0f1116] 
@@ -20,7 +18,7 @@ const FeaturedCards = ({ products }) => {
                             {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product, index) => (
                                 <div key={product._id} className=" font-primary relative    w-full bg-[#1f2229] rounded-lg shadow-lg">
                                     <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
-                                        <span className="font-semibold">Featured</span>
+                                        <span className="font-bold">Featured</span>
                                     </div>
                                     <figure className="relative overflow-hidden rounded-t-lg">
                                         <img
@@ -37,7 +35,7 @@ const FeaturedCards = ({ products }) => {
                                     <div className="card-actions justify-center border-t text-slate-400 border-[#353a4a] py-3 px-5">
                                         <div className='flex items-center justify-between gap-5 w-full'>
                                             <div className="bg-[#FF9D00] text-white py-1 px-3 rounded-md">
-                                                <span className="">{product.type}</span>
+                                                <span className="font-medium">{product.type}</span>
                                             </div>
                                             <p>{product.rating} RATING</p>
                                         </div>

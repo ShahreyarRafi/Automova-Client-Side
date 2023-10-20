@@ -3,7 +3,7 @@
 const ContactUs = () => {
     return (
         <div>
-            <div className=" container mx-auto md:px-6 bg-[#1d1b1d] font-rubik text-white px-5 lg:h-[53vh] flex justify-center items-center">
+            <div className=" container mx-auto md:px-6 bg-[#0f1116] font-rubik text-white px-5 lg:h-[53vh] flex justify-center items-center">
                 <section className=" flex">
                     <div className="flex flex-wrap">
                         <div className="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">

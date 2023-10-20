@@ -52,7 +52,6 @@ const Navbar = () => {
                     <div className='w-full flex justify-between items-center'>
                         <div>
                             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
-
                                 <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
                                     <NavLink
                                         to="/"
@@ -63,8 +62,6 @@ const Navbar = () => {
                                         HOME
                                     </NavLink>
                                 </li>
-
-
                                 <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
                                     <NavLink
                                         to="/contact-us"
@@ -87,12 +84,11 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </div>
-
                         <div>
                             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
                                 {user ? (
-                                    <div className="lg:flex-row flex items-center flex-col">
-                                        <div>
+                                    <li className="lg:flex-row flex items-center flex-col">
+                                        <a>
                                             {user.photoURL ? (
                                                 <img
                                                     src={user.photoURL}
@@ -106,8 +102,8 @@ const Navbar = () => {
                                                     className="h-8 w-8 rounded-full bg-gray-300"
                                                 />
                                             )}
-                                        </div>
-                                        <div className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
+                                        </a>
+                                        <a className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
                                             {user.displayName ? (
                                                 <p className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">{user.displayName}</p>
                                             ) : (
@@ -121,8 +117,8 @@ const Navbar = () => {
                                             >
                                                 Logout
                                             </button>
-                                        </div>
-                                    </div>
+                                        </a>
+                                    </li>
                                 ) : (
                                     <ul className='flex items-center gap-5'>
                                         <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
@@ -148,7 +144,7 @@ const Navbar = () => {
                                     </ul>
                                 )}
                                 <li className='flex items-center md:gap-6'>
-                                    <li className="nav-item my-1 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
+                                    <a className="nav-item my-1 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
                                         <NavLink
                                             to="/add-product"
                                             className={({ isActive, isPending }) =>
@@ -157,19 +153,17 @@ const Navbar = () => {
                                         >
                                             <p className='flex items-center mx-3 my-2'><span className='text-2xl mr-2'>+</span><span>ADD PRODUCT</span></p>
                                         </NavLink>
-                                    </li>
+                                    </a>
                                     {user && (
-                                        <li className="w-14">
+                                        <a className="w-14">
                                             <Link to="/cart">
                                                 <img src={basketImg} alt="" />
                                             </Link>
-                                        </li>
+                                        </a>
                                     )}
                                 </li>
                             </ul>
-
                         </div>
-
                     </div>
                 </div>
             </div>
