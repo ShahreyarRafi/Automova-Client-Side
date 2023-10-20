@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ScrollToTop from 'react-scroll-to-top';
 import Swal from 'sweetalert2';
 
 const ProductDetails = ({ products, params }) => {
@@ -144,7 +145,9 @@ const ProductDetails = ({ products, params }) => {
             ) : (
                 <p>Loading...</p>
             )}
+            
         </div>
+        
     );
 };
 

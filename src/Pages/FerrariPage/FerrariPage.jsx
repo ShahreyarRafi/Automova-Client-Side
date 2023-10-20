@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Ferrari from "../../Components/Ferrari/Ferrari";
 
 
+
 const FerrariPage = () => {
 
     const products = useLoaderData();
