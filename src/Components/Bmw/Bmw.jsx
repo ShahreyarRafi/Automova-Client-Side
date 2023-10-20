@@ -7,6 +7,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import image1 from '../../assets/images/bads/b1.jpg';
 import image2 from '../../assets/images/bads/b2.jpg';
 import image3 from '../../assets/images/bads/b3.jpg';
+import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 
 const Bmw = ({ products }) => {
@@ -137,7 +138,17 @@ const Bmw = ({ products }) => {
                                             <div className="bg-[#FF9D00] text-white py-1 px-3 rounded-md">
                                                 <span className="font-medium">{product.type}</span>
                                             </div>
-                                            <p>{product.rating} RATING</p>
+                                            <div className='flex items-center'>
+                                                <div className='flex gap-[1px] -mt-[2px] mr-1'>
+                                                    {Array.from({ length: Math.floor(product.rating) }, (_, index) => (
+                                                        <span key={index} className="text-yellow-400"><BsStarFill /></span>
+                                                    ))}
+                                                    {product.rating % 1 !== 0 && (
+                                                        <span className="text-yellow-400"><BsStarHalf /> </span>
+                                                    )}
+                                                </div>
+                                                <p> {product.rating} {product.rating > 1 ? ("Stars") : ("star")}</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex justify-evenly border-t border-[#353a4a]  ">

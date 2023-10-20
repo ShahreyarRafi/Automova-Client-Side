@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const FeaturedCards = ({ products }) => {
@@ -26,7 +27,7 @@ const FeaturedCards = ({ products }) => {
                                                 className='transform hover:scale-110 transition-transform duration-1000 object-cover h-96 w-full'
                                                 style={{ transformOrigin: 'center center' }}
                                                 src={product.photo}
-                                                alt={product.name} 
+                                                alt={product.name}
                                             />
                                         </figure>
                                     </div>
@@ -40,7 +41,17 @@ const FeaturedCards = ({ products }) => {
                                                 <div className="bg-[#FF9D00] text-white py-1 px-3 rounded-md">
                                                     <span className="font-medium">{product.type}</span>
                                                 </div>
-                                                <p>{product.rating} RATING</p>
+                                                <div className='flex items-center'>
+                                                    <div className='flex gap-[1px] -mt-[2px] mr-1'>
+                                                        {Array.from({ length: Math.floor(product.rating) }, (_, index) => (
+                                                            <span key={index} className="text-yellow-400"><BsStarFill /></span>
+                                                        ))}
+                                                        {product.rating % 1 !== 0 && (
+                                                            <span className="text-yellow-400"><BsStarHalf /> </span>
+                                                        )}
+                                                    </div>
+                                                    <p> {product.rating} {product.rating > 1 ? ("Stars") : ("star")}</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="card-actions justify-center border-t border-[#353a4a]">
