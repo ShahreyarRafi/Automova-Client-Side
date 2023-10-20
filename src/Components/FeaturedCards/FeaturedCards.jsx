@@ -15,7 +15,7 @@ const FeaturedCards = ({ products }) => {
                     <div>
                         <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-12 text-gray-100 font-primary'>Featured Cars</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product, index) => (
+                            {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product) => (
                                 <div key={product._id} className=" font-primary relative    w-full bg-[#1f2229] rounded-lg shadow-lg">
                                     <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
                                         <span className="font-bold">Featured</span>
@@ -26,14 +26,14 @@ const FeaturedCards = ({ products }) => {
                                                 className='transform hover:scale-110 transition-transform duration-1000 object-cover h-96 w-full'
                                                 style={{ transformOrigin: 'center center' }}
                                                 src={product.photo}
-                                                alt={product.name} // Use the product name as alt text
+                                                alt={product.name} 
                                             />
                                         </figure>
                                     </div>
                                     <div>
                                         <div className="py-2 px-5">
                                             <h2 className="text-white text-lg mb-1">{product.name}</h2>
-                                            <h5 className='text-white text-xl font-bold'>{product.price}</h5>
+                                            <h5 className='text-white text-xl font-bold'> <span>$</span> {product.price}</h5>
                                         </div>
                                         <div className="card-actions justify-center border-t text-slate-400 border-[#353a4a] py-3 px-5">
                                             <div className='flex items-center justify-between gap-5 w-full'>

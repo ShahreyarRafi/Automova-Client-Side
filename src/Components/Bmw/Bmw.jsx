@@ -75,7 +75,7 @@ const Bmw = ({ products }) => {
 
 
     return (
-        <div>
+        <div className='bg-[#090b11]'>
             <h2 className="text-2xl font-semibold font-primary">Cars Of bmw</h2>
             {bmwProducts.length > 0 ? (
                 <div>
@@ -114,25 +114,55 @@ const Bmw = ({ products }) => {
 
 
                     <h2 className='text-2xl font-semibold font-primary'>Total Products: {bmwProducts.length}</h2>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-4 gap-4">
                         {bmwProducts.map(product => (
-                            <div key={product._id} className="border p-4 rounded-md">
-                                <h3 className="text-lg font-semibold">{product.name}</h3>
-                                <p>{product.type}</p>
-                                <p>{product.price}</p>
-                                <p>{product.description}</p>
-                                <p>Rating: {product.rating}</p>
-                                <img src={product.photo} alt={product.name} />
-                                <div className='flex items-center justify-around text-center text-lg font-bold mt-3'>
-                                    <Link to={`/details/${product._id}`}>
-                                        <a>Details</a>
-                                    </Link>
-                                    <Link to={`/update-product/${product._id}`}>
-                                        <a>Update</a>
-                                    </Link>
-                                    <Link to="/" onClick={(e) => handleDelete(e, product._id)}>
-                                        <a className='text-red-600'>Delete</a>
-                                    </Link>
+                            <div key={product._id} className=" font-primary relative w-full bg-[#1f2229] rounded-lg shadow-lg">
+                                <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
+                                    <span className="font-bold">Featured</span>
+                                </div>
+                                <div>
+                                    <figure className="relative overflow-hidden rounded-t-lg">
+                                        <img
+                                            className='transform hover:scale-110 transition-transform duration-1000 object-cover h-96 w-full'
+                                            style={{ transformOrigin: 'center center' }}
+                                            src={product.photo}
+                                            alt={product.name}
+                                        />
+                                    </figure>
+                                </div>
+                                <div>
+                                    <div className="py-2 px-5">
+                                        <h2 className="text-white text-lg mb-1">{product.name}</h2>
+                                        <h5 className='text-white text-xl font-bold'> <span>$</span> {product.price}</h5>
+                                    </div>
+                                    <div className="card-actions justify-center border-t text-slate-400 border-[#353a4a] py-3 px-5">
+                                        <div className='flex items-center justify-between gap-5 w-full'>
+                                            <div className="bg-[#FF9D00] text-white py-1 px-3 rounded-md">
+                                                <span className="font-medium">{product.type}</span>
+                                            </div>
+                                            <p>{product.rating} RATING</p>
+                                        </div>
+                                    </div>
+                                    <div className="card-actions justify-evenly border-t border-[#353a4a]">
+                                        <Link to={`/details/${product._id}`}>
+                                            <button
+                                                className='font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3 w-full'>
+                                                DETAILS
+                                            </button>
+                                        </Link>
+                                        <Link to={`/update-product/${product._id}`}>
+                                            <button
+                                                className='font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3 w-full'>
+                                                UPDATE
+                                            </button>
+                                        </Link>
+                                        <Link to="/" onClick={(e) => handleDelete(e, product._id)}>
+                                            <button
+                                                className='font-primary text-sm font-medium hover:text-rose-600 duration-300 text-white text-star px-7 py-3 w-full'>
+                                                DELETE
+                                            </button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         ))}
