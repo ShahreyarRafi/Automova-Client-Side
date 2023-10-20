@@ -120,7 +120,7 @@ const AddProducts = () => {
                                 <span className="label-text">Engine Type</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="engine_type" placeholder="Type" className="input input-bordered w-full" />
+                                <input type="text" name="engine_type" placeholder="Engine Type" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -128,7 +128,7 @@ const AddProducts = () => {
                                 <span className="label-text">Transmission</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="transmission" placeholder="Price" className="input input-bordered w-full" />
+                                <input type="text" name="transmission" placeholder="Transmission" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ const AddProducts = () => {
                                 <span className="label-text">Fuel Type</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="fuel_type" placeholder="Type" className="input input-bordered w-full" />
+                                <input type="text" name="fuel_type" placeholder="Fuel Type" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -147,7 +147,7 @@ const AddProducts = () => {
                                 <span className="label-text">Drive System</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="drive_system" placeholder="Price" className="input input-bordered w-full" />
+                                <input type="text" name="drive_system" placeholder="Drive System" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -158,7 +158,7 @@ const AddProducts = () => {
                                 <span className="label-text">Infotainment</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="infotainment" placeholder="Type" className="input input-bordered w-full" />
+                                <input type="text" name="infotainment" placeholder="Infotainment" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -166,7 +166,7 @@ const AddProducts = () => {
                                 <span className="label-text">Seats</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="seats" placeholder="Price" className="input input-bordered w-full" />
+                                <input type="text" name="seats" placeholder="Seats" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>

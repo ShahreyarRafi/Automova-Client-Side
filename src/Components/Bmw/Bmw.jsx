@@ -140,25 +140,23 @@ const Bmw = ({ products }) => {
                                             <p>{product.rating} RATING</p>
                                         </div>
                                     </div>
-                                    <div className="card-actions justify-evenly border-t border-[#353a4a]">
-                                        <Link to={`/details/${product._id}`}>
-                                            <button
-                                                className='font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3 w-full'>
-                                                DETAILS
-                                            </button>
-                                        </Link>
-                                        <Link to={`/update-product/${product._id}`}>
-                                            <button
-                                                className='font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3 w-full'>
-                                                UPDATE
-                                            </button>
-                                        </Link>
-                                        <Link to="/" onClick={(e) => handleDelete(e, product._id)}>
-                                            <button
-                                                className='font-primary text-sm font-medium hover:text-rose-600 duration-300 text-white text-star px-7 py-3 w-full'>
-                                                DELETE
-                                            </button>
-                                        </Link>
+                                    <div className="flex justify-evenly border-t border-[#353a4a]  ">
+                                        <div className='w-1/2 border-r border-[#353a4a] text-center'>
+                                            <Link to={`/details/${product._id}`}>
+                                                <button
+                                                    className=' font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3'>
+                                                    DETAILS
+                                                </button>
+                                            </Link>
+                                        </div>
+                                        <div className='w-1/2 text-center'>
+                                            <Link to={`/update-product/${product._id}`}>
+                                                <button
+                                                    className=' font-primary text-sm font-medium hover:text-[#FF9D00] duration-300 text-white text-star px-7 py-3'>
+                                                    UPDATE
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
