@@ -12,10 +12,7 @@
 @tailwind utilities;
 
 
-.star-rating span {
-    width: 1em;
-  }
-  
+
 
 /* .font-primary{
     font-family: 'Open Sans', sans-serif;

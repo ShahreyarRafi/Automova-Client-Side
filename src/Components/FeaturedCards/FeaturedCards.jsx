@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsStarFill, BsStarHalf } from 'react-icons/bs';
+import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const FeaturedCards = ({ products }) => {
@@ -43,14 +43,17 @@ const FeaturedCards = ({ products }) => {
                                                 </div>
                                                 <div className='flex items-center'>
                                                     <div className='flex gap-[1px] -mt-[2px] mr-1'>
-                                                        {Array.from({ length: Math.floor(product.rating) }, (_, index) => (
+                                                        {Array.from({ length: Math.min(Math.floor(product.rating), 5) }, (_, index) => (
                                                             <span key={index} className="text-yellow-400"><BsStarFill /></span>
                                                         ))}
                                                         {product.rating % 1 !== 0 && (
                                                             <span className="text-yellow-400"><BsStarHalf /> </span>
                                                         )}
+                                                        {Array.from({ length: Math.max(5 - Math.ceil(product.rating), 0) }, (_, index) => (
+                                                            <span key={index} className="text-gray-400"><BsStar /></span>
+                                                        ))}
                                                     </div>
-                                                    <p> {product.rating} {product.rating > 1 ? ("Stars") : ("star")}</p>
+                                                    <p> {Math.min(product.rating, 5)} {Math.min(product.rating, 5) > 1 ? ("Stars") : ("star")}</p>
                                                 </div>
                                             </div>
                                         </div>
