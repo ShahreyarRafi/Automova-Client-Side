@@ -18,9 +18,11 @@ const FeaturedCards = ({ products }) => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product) => (
                                 <div key={product._id} className=" font-primary relative    w-full bg-[#1f2229] rounded-lg shadow-lg">
-                                    <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
-                                        <span className="font-bold">Featured</span>
-                                    </div>
+                                    {product.featured === 'yes' && (
+                                        <div className="price-tag-shape absolute top-0 left-0 bg-[#FF9D00] text-white py-2 px-4 z-10 flex items-center shadow-xl rounded-tl-lg">
+                                            <span className="font-bold">Featured</span>
+                                        </div>
+                                    )}
                                     <div>
                                         <figure className="relative overflow-hidden rounded-t-lg">
                                             <img
