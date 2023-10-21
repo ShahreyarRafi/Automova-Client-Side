@@ -14,11 +14,11 @@ const FeaturedCards = ({ products }) => {
 
     // bg-[#0f1116] 
     return (
-        <div className='bg-[#090b11]'>
+        <div className='dark:bg-[#090b11] bg-white dark:text-white duration-100'>
             <div className='max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-4 py-12'>
                 {featuredProducts.length > 0 ? (
                     <div>
-                        <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-12 text-gray-100 font-primary'>Featured Cars</h2>
+                        <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-12 dark:text-gray-100 text-black duration-100 font-primary'>Featured Cars</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {featuredProducts.slice(0, showAllCards ? featuredProducts.length : 3).map((product) => (
                                 <div key={product._id} className=" font-primary relative    w-full bg-[#1f2229] rounded-lg shadow-lg">

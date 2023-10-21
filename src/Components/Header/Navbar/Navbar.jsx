@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import logoWhite from '/AUTOMOVA_WHITE.png'
 import { Link, NavLink } from 'react-router-dom';
 import userPicPlaceholder from '../../../assets/images/userPicPlaceHolder.png'
@@ -15,6 +15,47 @@ const Navbar = () => {
     const handleLogout = () => {
         logout();
     }
+
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") || "dark"
+    );
+
+    const element = document.documentElement;
+    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const options = [
+        {
+            icon: "sunny",
+            text: "light",
+        },
+        {
+            icon: "moon",
+            text: "dark",
+        }
+    ]
+
+    function onWindowMatch() {
+        if (
+            theme === "dark" || // Use the 'theme' state value here
+            (!("theme" in localStorage) && darkQuery.matches)
+        ) {
+            element.classList.add("dark");
+        } else {
+            element.classList.remove("dark");
+        }
+    }
+
+    const memoizedOnWindowMatch = useCallback(onWindowMatch, [theme]);
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme); // Save the selected theme in localStorage
+        memoizedOnWindowMatch();
+    }, [theme, memoizedOnWindowMatch]);
+
+    useEffect(() => {
+        // Initialize the theme when the component mounts
+        memoizedOnWindowMatch();
+    }, [memoizedOnWindowMatch]);
 
 
     return (
@@ -81,6 +122,19 @@ const Navbar = () => {
                                     >
                                         ABOUT US
                                     </NavLink>
+                                </li>
+                                <li>
+                                    {
+                                        options?.map(opt => (
+                                            <button
+                                                key={opt.text}
+                                                onClick={() => setTheme(opt.text)}
+                                                className={`w-8 h-8 leading-9 text-xl rounded-full m-1 ${theme === opt.text && "text-sky-600"
+                                                    }`}>
+                                                <ion-icon name={opt.icon}></ion-icon>
+                                            </button>
+                                        ))
+                                    }
                                 </li>
                             </ul>
                         </div>

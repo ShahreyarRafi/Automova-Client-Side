@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const WhyUs = () => {
     return (
-        <div className='font-primary bg-[#090b11] py-7'>
+        <div className='font-primary dark:bg-[#090b11] bg-white py-7'>
             <div className="p-8">
                 <div className="flex flex-col items-center justify-center">
-                    <span className="rounded-full bg-[#FF9D00] px-2 py-1 text-white uppercase text-sm">
+                    <span className="rounded-full bg-[#FF9D00] px-2 py-1 dark:text-white text-black uppercase text-sm">
                         Insight
                     </span>
                 </div>
-                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-100 text-center mt-6">
+                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading dark:text-gray-100 text-black text-center mt-6">
                     Why Choose <span>Us?</span>
                 </h1>
             </div>
@@ -36,10 +36,10 @@ const WhyUs = () => {
                         <h2 className="uppercase mt-6 text-indigo-500 font-bold mb-3">
                             Wide range of brands
                         </h2>
-                        <p className="text-sm text-gray-100 mb-3">
+                        <p className="text-sm dark:text-gray-100 text-gray-700 dark:font-normal font-medium mb-3">
                             We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.                    </p>
                         <Link to={'/about-us'}>
-                            <a className="text-indigo-500 flex items-center justify-center hover:text-indigo-600">
+                            <a className="text-indigo-500 flex items-center justify-center hover:text-indigo-600 dark:font-normal font-medium">
                                 More about us
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -76,10 +76,10 @@ const WhyUs = () => {
                         <h2 className="uppercase mt-6 text-green-500 font-bold mb-3">
                             Trusted by our clients
                         </h2>
-                        <p className="text-sm text-gray-100 mb-3">
+                        <p className="text-sm dark:text-gray-100 text-gray-700 dark:font-normal font-medium mb-3">
                             We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.                    </p>
                         <Link to={'/about-us'}>
-                            <a className="text-green-500 flex items-center justify-center hover:text-green-600">
+                            <a className="text-green-500 flex items-center justify-center hover:text-green-600 dark:font-normal font-medium">
                                 More about us
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -116,10 +116,10 @@ const WhyUs = () => {
                         <h2 className="uppercase mt-6 text-red-500 font-bold mb-3">
                             Fast & easy financing
                         </h2>
-                        <p className="text-sm text-gray-100 mb-3">
+                        <p className="text-sm dark:text-gray-100 text-gray-700 dark:font-normal font-medium mb-3">
                             We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.                    </p>
                         <Link to={'/about-us'}>
-                            <a className="text-red-500 flex items-center justify-center hover:text-red-600">
+                            <a className="text-red-500 flex items-center justify-center hover:text-red-600 dark:font-normal font-medium">
                                 More about us
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
