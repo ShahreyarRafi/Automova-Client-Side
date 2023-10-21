@@ -6,8 +6,8 @@ import './Porsche.css'
 
 import React, { useState, useEffect, useMemo } from 'react';
 import image1 from '../../assets/images/pads/p0.jpg';
-import image2 from '../../assets/images/pads/p1.jpg';
-import image3 from '../../assets/images/pads/p2.jpg';
+import image2 from '../../assets/images/pads/p1.png';
+import image3 from '../../assets/images/pads/p2.png';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 const Porsche = ({ products }) => {

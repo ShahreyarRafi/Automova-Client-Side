@@ -6,7 +6,7 @@ import './Mercedes.css'
 import React, { useState, useEffect, useMemo } from 'react';
 import image1 from '../../assets/images/mads/m1.png';
 import image2 from '../../assets/images/mads/m2.png';
-import image3 from '../../assets/images/mads/m3.jpg';
+import image3 from '../../assets/images/mads/m3.png';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 

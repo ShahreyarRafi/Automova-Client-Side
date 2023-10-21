@@ -4,9 +4,9 @@ import Swal from 'sweetalert2';
 import './Audi.css'
 
 import React, { useState, useEffect, useMemo } from 'react';
-import image1 from '../../assets/images/aads/a1.jpg';
+import image1 from '../../assets/images/aads/a1.png';
 import image2 from '../../assets/images/aads/a2.jpg';
-import image3 from '../../assets/images/aads/a3.jpg';
+import image3 from '../../assets/images/aads/a3.png';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 

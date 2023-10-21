@@ -5,9 +5,9 @@ import './Ferrari.css'
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { BsStarHalf } from 'react-icons/bs';
 import React, { useState, useEffect, useMemo } from 'react';
-import image1 from '../../assets/images/ferrariAds/f1.jpg';
+import image1 from '../../assets/images/ferrariAds/f1.png';
 import image2 from '../../assets/images/ferrariAds/f2.png';
-import image3 from '../../assets/images/ferrariAds/f3.jpg';
+import image3 from '../../assets/images/ferrariAds/f3.png';
 
 
 
