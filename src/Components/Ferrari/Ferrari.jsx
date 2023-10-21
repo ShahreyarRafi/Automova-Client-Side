@@ -15,7 +15,6 @@ import image3 from '../../assets/images/ferrariAds/f3.png';
 const Ferrari = ({ products }) => {
     const ferrariProducts = products.filter(product => product.brand.toLowerCase() === "ferrari");
 
-
     const images = useMemo(() => [image1, image2, image3], []);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isFadingOut, setIsFadingOut] = useState(false);
@@ -37,10 +36,9 @@ const Ferrari = ({ products }) => {
         return () => clearInterval(intervalId);
     });
 
-
-
-
-
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
 
     const handleDelete = (e, productId) => {
         e.preventDefault();
@@ -132,8 +130,11 @@ const Ferrari = ({ products }) => {
                                     </figure>
                                 </div>
                                 <div>
-                                    <div className="py-2 px-5">
-                                        <h2 className="text-white text-lg mb-1">{product.name}</h2>
+                                    <div className="py-2 px-5 my-1">
+                                        <div className='flex justify-between items-center mb-1'>
+                                            <h2 className="text-white text-lg mb-1">{product.name}</h2>
+                                            <h2 className="text-white text-lg mb-1">Brand: {capitalizeFirstLetter(product.brand)}</h2>
+                                        </div>
                                         <h5 className='text-white text-xl font-bold'> <span>$</span> {product.price}</h5>
                                     </div>
                                     <div className="card-actions justify-center border-t text-slate-400 border-[#353a4a] py-3 px-5">

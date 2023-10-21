@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import './Banner.css'; // Import your CSS styles here
-import images from './images'; // Import an array of image paths
+import './Banner.css';
+import images from './images'; 
 
 
 
@@ -23,18 +23,17 @@ const Banner = () => {
                 setCurrentImageIndex((prevIndex) => getNextIndex(prevIndex));
                 setIsFadingOut(false);
                 setIsFadingIn(true);
-            }, 500); // Adjust this delay as needed
+            }, 500); 
         }, 7000);
 
         return () => clearInterval(intervalId);
     }, [getNextIndex]);
 
     useEffect(() => {
-        // Reset fade-in after a short delay
         if (isFadingIn) {
             const fadeTimeout = setTimeout(() => {
                 setIsFadingIn(false);
-            }, 1000); // Adjust this delay as needed
+            }, 1000); 
 
             return () => clearTimeout(fadeTimeout);
         }

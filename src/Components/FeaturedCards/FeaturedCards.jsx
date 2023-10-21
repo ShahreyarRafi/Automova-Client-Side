@@ -8,6 +8,10 @@ const FeaturedCards = ({ products }) => {
     const featuredProducts = products?.filter(product => product?.featured?.toLowerCase() === "yes");
 
 
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
     // bg-[#0f1116] 
     return (
         <div className='bg-[#090b11]'>
@@ -34,8 +38,11 @@ const FeaturedCards = ({ products }) => {
                                         </figure>
                                     </div>
                                     <div>
-                                        <div className="py-2 px-5">
-                                            <h2 className="text-white text-lg mb-1">{product.name}</h2>
+                                        <div className="py-2 px-5 my-1">
+                                            <div className='flex justify-between items-center mb-1'>
+                                                <h2 className="text-white text-lg mb-1">{product.name}</h2>
+                                                <h2 className="text-white text-lg mb-1">Brand: {capitalizeFirstLetter(product.brand)}</h2>
+                                            </div>
                                             <h5 className='text-white text-xl font-bold'> <span>$</span> {product.price}</h5>
                                         </div>
                                         <div className="card-actions justify-center border-t text-slate-400 border-[#353a4a] py-3 px-5">
