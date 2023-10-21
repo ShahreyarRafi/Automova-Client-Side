@@ -11,7 +11,7 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 
 const Audi = ({ products }) => {
-    const audiProducts = products.filter(product => product.brand.toLowerCase() === "bmw");
+    const audiProducts = products.filter(product => product.brand.toLowerCase() === "audi");
 
 
 
