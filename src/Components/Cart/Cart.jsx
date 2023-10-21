@@ -48,7 +48,7 @@ const Cart = ({ cartItems }) => {
         <div className='font-primary min-h-[80vh] flex items-center justify-center px-4 py-10 bg-[#090b11]'>
             {cartItems.length > 0 ? (
                 <div>
-                    <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
+                    <div className="max-w-6xl grid grid-cols-1 xl:grid-cols-2 gap-4 mx-auto">
                         {cartItems.map(cartItem => (
                             <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl bg-[#1e2127] rounded text-gray-100">
                                 <div className="h-full w-full flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl dark:hover-bg-gray-700">
@@ -65,9 +65,7 @@ const Cart = ({ cartItems }) => {
                                                 <p className="text-sm text-slate-400 p-1 flex justify-between w-72 "><span className="">Price:</span> <span className="">${cartItem.price}</span></p>
                                             </div>
                                             <div className="mx-auto w-auto md:w-72">
-                                                <Link to="/" onClick={(e) => handleDelete(e, cartItem._id)}>
-                                                    <button className="bg-[#c9363f] hover:bg-[#f14e59] px-3 py-2 text-white rounded text-sm" >Remove From Cart</button>
-                                                </Link>
+                                                <button onClick={(e) => handleDelete(e, cartItem._id)} className="bg-[#c9363f] hover:bg-[#f14e59] px-3 py-2 text-white text-sm rounded" >Remove From Cart</button>
                                             </div>
                                         </div>
                                     </div>
