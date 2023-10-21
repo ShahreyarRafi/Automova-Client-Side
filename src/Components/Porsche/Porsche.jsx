@@ -110,7 +110,7 @@ const Porsche = ({ products }) => {
 
 
 
-                    <div className="max-w-[1850px] grid grid-cols-4 gap-4 py-10 mx-auto">
+                    <div className="max-w-[1870px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 py-10 px-5 mx-auto">
                         {porscheProducts.map(product => (
                             <div key={product._id} className=" font-primary relative w-full bg-[#1f2229] rounded-lg shadow-lg">
                                 {product.featured === 'yes' && (
