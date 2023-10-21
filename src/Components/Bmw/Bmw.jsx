@@ -53,7 +53,7 @@ const Bmw = ({ products }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/products/${productId}`, {
+                fetch(`https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products/${productId}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -102,7 +102,7 @@ const Bmw = ({ products }) => {
 
                                     <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
                                         <div className='flex flex-col items-center justify-center h-[88vh]'>
-                                            <h2 className='xl:text-7xl md:text-5xl text-3xl font-rubik font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8'><span className='text-[#FF9D00]'></span></h2>
+                                            <h2 className='xl:text-7xl md:text-5xl text-3xl font-rubik font-bold text-white text-center md:leading-[1.2] drop-shadow-lg shadow-black mb-8'><span className='text-[#FF9D00]'>BMW:</span> where style, tech, and performance unite.</h2>
 
                                         </div>
                                     </div>
@@ -111,6 +111,7 @@ const Bmw = ({ products }) => {
                         </div>
                     </div>
 
+                    <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-1 mt-10 text-gray-100 font-primary'>Explore BMWs</h2>
 
 
                     <div className="max-w-[1870px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 py-10 px-5 mx-auto">

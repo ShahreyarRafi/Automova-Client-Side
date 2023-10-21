@@ -39,7 +39,7 @@ const AddProducts = () => {
             const newProduct = { photo, name, brand, type, engine_type, transmission, fuel_type, drive_system, infotainment, seats, description, price, rating, featured };
 
             // send data to the server
-            fetch('http://localhost:5000/products', {
+            fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

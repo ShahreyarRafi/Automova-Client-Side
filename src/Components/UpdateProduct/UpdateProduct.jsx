@@ -53,7 +53,7 @@ const UpdateProduct = ({ product }) => {
         } else {
             console.log("update clicked");
             // Send data to the server
-            fetch(`http://localhost:5000/products/${_id}`, {
+            fetch(`https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

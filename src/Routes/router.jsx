@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products')
             },
             {
                 path: 'register',
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
                         <CartPage></CartPage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/cartItems'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/cartItems'),
             },
             {
                 path: 'brand-ferrari',
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
                         <FerrariPage></FerrariPage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-audi',
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
                         <AudiPage></AudiPage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-mercedes',
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
                         <MercedesPage></MercedesPage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-porsche',
@@ -101,7 +101,7 @@ const router = createBrowserRouter([
                         <PorschePage></PorschePage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-rolls-royce',
@@ -110,7 +110,7 @@ const router = createBrowserRouter([
                         <RollsRoycePage></RollsRoycePage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-bmw',
@@ -119,7 +119,7 @@ const router = createBrowserRouter([
                         <BmwPage></BmwPage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'details/:id',
@@ -128,7 +128,7 @@ const router = createBrowserRouter([
                         <DetailsPage></DetailsPage>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'update-product/:id',
@@ -137,7 +137,7 @@ const router = createBrowserRouter([
                         <UpdatePage></UpdatePage>
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products/${params.id}`),
             },
 
         ]

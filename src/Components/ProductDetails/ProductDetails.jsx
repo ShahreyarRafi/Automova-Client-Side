@@ -31,7 +31,7 @@ const ProductDetails = ({ products, params }) => {
             });
         } else {
 
-            fetch('http://localhost:5000/cartItems', {
+            fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/cartItems', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -153,7 +153,7 @@ export default ProductDetails;
 
 // const handleAddToCart = () => {
 //     console.log(product);
-//     fetch('http://localhost:5000/cartItems', {
+//     fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/cartItems', {
 //         method: 'POST',
 //         headers: {
 //             'content-type': 'application/json'
