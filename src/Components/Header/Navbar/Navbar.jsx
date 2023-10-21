@@ -6,6 +6,7 @@ import basketImg from '../../../assets/images/basket.png'
 
 import { useContext } from "react";
 import { AuthContext } from "../../../services/Firebase/AuthProvider";
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -25,11 +26,11 @@ const Navbar = () => {
 
     const options = [
         {
-            icon: "sunny",
+            icon: <BsFillSunFill/>,
             text: "light",
         },
         {
-            icon: "moon",
+            icon: <BsFillMoonStarsFill/>,
             text: "dark",
         }
     ]
@@ -123,16 +124,18 @@ const Navbar = () => {
                                         ABOUT US
                                     </NavLink>
                                 </li>
+
                                 <li>
                                     {
                                         options?.map(opt => (
                                             <button
                                                 key={opt.text}
                                                 onClick={() => setTheme(opt.text)}
-                                                className={`w-8 h-8 leading-9 text-xl rounded-full m-1 ${theme === opt.text && "text-sky-600"
-                                                    }`}>
-                                                <ion-icon name={opt.icon}></ion-icon>
+                                                className={`w-8 h-8 leading-9 text-xl rounded-full m-1 ${theme === opt.text ? "text-sky-600" : "text-gray-700"}`}
+                                            >
+                                                {opt.icon}
                                             </button>
+
                                         ))
                                     }
                                 </li>
