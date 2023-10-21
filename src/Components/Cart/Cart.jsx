@@ -50,23 +50,23 @@ const Cart = ({ cartItems }) => {
                 <div>
                     <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
                         {cartItems.map(cartItem => (
-                            <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl bg-[#1f2229] rounded text-gray-100">
+                            <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl bg-[#1e2127] rounded text-gray-100">
                                 <div className="h-full w-full flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl dark:hover-bg-gray-700">
                                     <img className=" object-cover w-full rounded-t-lg h-96 md:h-full md:w-60 md:rounded-none md:rounded-l-md" src={cartItem.photo} alt="" />
                                     <div className="w-full">
                                         <div className="flex flex-col justify between p-4 leading-normal">
                                             <div className="mx-auto mb-5">
-                                                <h5 className="md:min-w-[300px] mb-2 text-2xl font-medium text-gray-100">{cartItem.name}</h5>
-                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Brand:</span> <span className="">{capitalizeFirstLetter(cartItem.brand)}</span></p>
-                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Type:</span> <span className="">{cartItem.type}</span></p>
-                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Engine Type:</span> <span className="">{cartItem.engine_type}</span></p>
-                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Transmission:</span> <span className="">{cartItem.transmission}</span></p>
-                                                <p className=" text-slate-400 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Drive System:</span> <span className="">{cartItem.drive_system}</span></p>
-                                                <p className=" text-slate-400 flex justify-between w-72 "><span className="">Price:</span> <span className="">${cartItem.price}</span></p>
+                                                <h5 className="md:min-w-[300px] max-w-[300px] truncate  overflow-hidden mb-2 text-2xl font-medium text-gray-100">{cartItem.name}</h5>
+                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Brand:</span> <span className="">{capitalizeFirstLetter(cartItem.brand)}</span></p>
+                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Type:</span> <span className="">{cartItem.type}</span></p>
+                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Engine Type:</span> <span className="">{cartItem.engine_type}</span></p>
+                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Transmission:</span> <span className="">{cartItem.transmission}</span></p>
+                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Drive System:</span> <span className="">{cartItem.drive_system}</span></p>
+                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 "><span className="">Price:</span> <span className="">${cartItem.price}</span></p>
                                             </div>
                                             <div className="mx-auto w-auto md:w-72">
                                                 <Link to="/" onClick={(e) => handleDelete(e, cartItem._id)}>
-                                                    <button className="bg-[#c9363f] hover:bg-[#f14e59] px-3 py-2 text-white rounded" >Remove From Cart</button>
+                                                    <button className="bg-[#c9363f] hover:bg-[#f14e59] px-3 py-2 text-white rounded text-sm" >Remove From Cart</button>
                                                 </Link>
                                             </div>
                                         </div>
@@ -78,7 +78,7 @@ const Cart = ({ cartItems }) => {
                 </div>
             ) : (
                 <div className='h-[80vh] flex items-center justify-center'>
-                    <p className='text-2xl font-bold font-primary'>Empty Cart</p>
+                    <p className='text-2xl font-bold font-primary text-white'>Empty Cart</p>
                 </div>
             )}
         </div>
