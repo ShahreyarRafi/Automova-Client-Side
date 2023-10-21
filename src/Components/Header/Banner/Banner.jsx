@@ -40,6 +40,12 @@ const Banner = () => {
         }
     }, [isFadingIn]);
 
+    const handleExploreClick = () => {
+        const windowHeight = window.innerHeight;
+        const middleOfPage = windowHeight / 1.45;
+        window.scrollTo({ top: middleOfPage, behavior: 'smooth' });
+    };
+
     return (
         <div className="overflow-hidden flex justify-center items-center">
             <div className="carousel w-full object-cover">
@@ -58,9 +64,12 @@ const Banner = () => {
                                     Find Your <span className="text-[#FF9D00]">Perfect</span> Car
                                 </h2>
                                 <div>
-                                    <Link to="/register">
-                                        <button className="bg-[#FF9D00] font-primary font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape">
-                                            Join Us Now!
+                                    <Link >
+                                        <button
+                                            className="bg-[#FF9D00] font-primary font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape"
+                                            onClick={handleExploreClick}
+                                        >
+                                            Explore!
                                         </button>
                                     </Link>
                                 </div>

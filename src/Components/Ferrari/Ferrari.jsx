@@ -12,16 +12,8 @@ import image3 from '../../assets/images/ferrariAds/f3.png';
 
 
 
-
-
-
-
-
 const Ferrari = ({ products }) => {
     const ferrariProducts = products.filter(product => product.brand.toLowerCase() === "ferrari");
-
-
-
 
 
     const images = useMemo(() => [image1, image2, image3], []);
