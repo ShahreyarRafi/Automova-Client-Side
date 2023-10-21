@@ -40,10 +40,12 @@ const Banner = () => {
         }
     }, [isFadingIn]);
 
+    const scrollOffset = 300; 
+
     const handleExploreClick = () => {
         const windowHeight = window.innerHeight;
-        const middleOfPage = windowHeight / 1.45;
-        window.scrollTo({ top: middleOfPage, behavior: 'smooth' });
+        const targetPosition = windowHeight / 2 + scrollOffset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
     };
 
     return (
