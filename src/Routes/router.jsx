@@ -69,56 +69,32 @@ const router = createBrowserRouter([
             },
             {
                 path: 'brand-ferrari',
-                element: (
-                    <PrivateRoute>
-                        <FerrariPage></FerrariPage>
-                    </PrivateRoute>
-                ),
+                element:<FerrariPage></FerrariPage>,
                 loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-audi',
-                element: (
-                    <PrivateRoute>
-                        <AudiPage></AudiPage>
-                    </PrivateRoute>
-                ),
+                element: <AudiPage></AudiPage>,
                 loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-mercedes',
-                element: (
-                    <PrivateRoute>
-                        <MercedesPage></MercedesPage>
-                    </PrivateRoute>
-                ),
+                element: <MercedesPage></MercedesPage>,
                 loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-porsche',
-                element: (
-                    <PrivateRoute>
-                        <PorschePage></PorschePage>
-                    </PrivateRoute>
-                ),
+                element: <PorschePage></PorschePage>,
                 loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-rolls-royce',
-                element: (
-                    <PrivateRoute>
-                        <RollsRoycePage></RollsRoycePage>
-                    </PrivateRoute>
-                ),
+                element: <RollsRoycePage></RollsRoycePage>,
                 loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
                 path: 'brand-bmw',
-                element: (
-                    <PrivateRoute>
-                        <BmwPage></BmwPage>
-                    </PrivateRoute>
-                ),
+                element: <BmwPage></BmwPage>,
                 loader: () => fetch('https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/products'),
             },
             {
