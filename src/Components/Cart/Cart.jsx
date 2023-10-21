@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, setCartItems }) => {
 
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
 
-    const handleDelete = (e, cartItemsId) => {
+    const handleDelete = (e, cartItemId) => {
         e.preventDefault();
-        console.log(cartItemsId);
+        console.log(cartItemId);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -21,7 +21,7 @@ const Cart = ({ cartItems }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/cartItems/${cartItemsId}`, {
+                fetch(`http://localhost:5000/cartItems/${cartItemId}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -32,7 +32,10 @@ const Cart = ({ cartItems }) => {
                                 'Deleted!',
                                 'Item has been deleted.',
                                 'success'
-                            )
+                            );
+
+                            const remaining = cartItems.filter(item => item._id !== cartItemId)
+                            setCartItems(remaining);
                         }
                     })
                     .catch(error => {
