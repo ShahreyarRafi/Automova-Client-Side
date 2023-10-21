@@ -64,14 +64,12 @@ const Banner = () => {
                                     Find Your <span className="text-[#FF9D00]">Perfect</span> Car
                                 </h2>
                                 <div>
-                                    <Link >
-                                        <button
-                                            className="bg-[#FF9D00] font-primary font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape"
-                                            onClick={handleExploreClick}
-                                        >
-                                            Explore!
-                                        </button>
-                                    </Link>
+                                    <button
+                                        className="bg-[#FF9D00] font-primary font-medium md:text-lg text-white md:px-12 px-7 md:py-4 py-2 btn-shape"
+                                        onClick={handleExploreClick}
+                                    >
+                                        Explore!
+                                    </button>
                                 </div>
                             </div>
                         </div>
