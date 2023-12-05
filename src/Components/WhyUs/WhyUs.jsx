@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const WhyUs = () => {
     return (
-        <div className='font-primary dark:bg-[#090b11] bg-white py-7'>
+        <div className='font-primary dark:bg-[#090b11] bg-white duration-300 py-7'>
             <div className="p-8">
                 <div className="flex flex-col items-center justify-center">
                     <span className="rounded-full bg-[#FF9D00] px-2 py-1 dark:text-white text-black uppercase text-sm">
                         Insight
                     </span>
                 </div>
-                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading dark:text-gray-100 text-black text-center mt-6">
+                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading dark:text-gray-100  text-black text-center mt-6 duration-300">
                     Why Choose <span>Us?</span>
                 </h1>
             </div>

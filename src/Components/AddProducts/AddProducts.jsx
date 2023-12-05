@@ -27,10 +27,10 @@ const AddProducts = () => {
 
         console.log(newProduct);
 
-        if (!name || !brand || !type || !price || !description || !rating || !photo) {
+        if (!photo || !name || !brand || !type || !engine_type || !transmission || !fuel_type || !drive_system || !infotainment || !seats || !description || !price || !rating || !featured) {
             Swal.fire({
-                title: 'Error!',
-                text: 'Please fill in all required fields.',
+                title: 'Please fill in all fields!',
+                text: 'One or more fields are empty',
                 icon: 'error',
                 confirmButtonText: 'OK'
             });
@@ -63,26 +63,26 @@ const AddProducts = () => {
 
     return (
         <div>
-            <div className="bg-[#eef2fa] p-24 font-primary">
-                <h2 className="text-3xl font-extrabold">ADD A PRODUCT</h2>
+            <div className="dark:bg-[#0f1116] bg-[#eef2fa] px-5 md:px-24 py-24 font-primary duration-300">
+                <h2 className="text-3xl font-extrabold text-black dark:text-gray-100 duration-300">ADD A PRODUCT</h2>
                 <form onSubmit={handleAddProduct}>
                     {/* name and brand row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-5 md:mb-8">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Name</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="name" placeholder="Name" className="input input-bordered w-full" />
+                                <input type="text" name="name" placeholder="Name" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:md:ml-4">
                             <label className="label">
-                                <span className="label-text">Brand Name</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Brand Name</span>
                             </label>
-                            <label className="rounded-lg">
-                                <select name="brand" className="input input-bordered w-full">
-                                    <option value="" disabled selected>Select Brand Name</option>
+                            <label className="rounded-lg ">
+                                <select name="brand" className="input input-bordered w-full dark:bg-zinc-800 bg-white dark:text-gray-400 duration-300">
+                                    <option value="" disabled selected >Select Brand Name</option>
                                     <option value="ferrari">Ferrari</option>
                                     <option value="audi">Audi</option>
                                     <option value="mercedes">Mercedes</option>
@@ -94,118 +94,118 @@ const AddProducts = () => {
                         </div>
                     </div>
                     {/* type and price row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-5 md:mb-8">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Type</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Type</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="type" placeholder="Type" className="input input-bordered w-full" />
+                                <input type="text" name="type" placeholder="Type" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Price</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Price</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                                <input type="text" name="price" placeholder="Price" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
                     </div>
 
                     {/* engine type and Transmission row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-5 md:mb-8">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Engine Type</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Engine Type</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="engine_type" placeholder="Engine Type" className="input input-bordered w-full" />
+                                <input type="text" name="engine_type" placeholder="Engine Type" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Transmission</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Transmission</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="transmission" placeholder="Transmission" className="input input-bordered w-full" />
+                                <input type="text" name="transmission" placeholder="Transmission" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
                     </div>
                     {/* Fuel Type and Drive System row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-5 md:mb-8">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Fuel Type</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Fuel Type</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="fuel_type" placeholder="Fuel Type" className="input input-bordered w-full" />
+                                <input type="text" name="fuel_type" placeholder="Fuel Type" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Drive System</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Drive System</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="drive_system" placeholder="Drive System" className="input input-bordered w-full" />
+                                <input type="text" name="drive_system" placeholder="Drive System" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
                     </div>
                     {/* Infotainment and Seats row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-5 md:mb-8">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Infotainment</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Infotainment</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="infotainment" placeholder="Infotainment" className="input input-bordered w-full" />
+                                <input type="text" name="infotainment" placeholder="Infotainment" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Seats</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Seats</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="seats" placeholder="Seats" className="input input-bordered w-full" />
+                                <input type="text" name="seats" placeholder="Seats" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
                     </div>
 
                     {/* description and ratings row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-5 md:mb-8">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Description</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Description</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="description" placeholder="Description" className="input input-bordered w-full" />
+                                <input type="text" name="description" placeholder="Description" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Rating</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Rating</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                                <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
                     </div>
                     {/* form Photo url row and featured */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
+                    <div className="md:flex mb-14">
+                        <div className="form-control md:w-1/2 mb-4 md:mb-0">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Photo URL</span>
                             </label>
                             <label className="rounded-lg">
-                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
+                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full dark:bg-zinc-800 bg-white duration-300" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Featured</span>
+                                <span className="text-black dark:text-slate-300 duration-300">Featured</span>
                             </label>
                             <label className="rounded-lg">
-                                <select name="featured" className="input input-bordered w-full">
+                                <select name="featured" className="input input-bordered w-full dark:bg-zinc-800 bg-white dark:text-gray-400 duration-300">
                                     <option value="" disabled selected>Select If You Want To Feature It or Not</option>
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
@@ -229,7 +229,7 @@ export default AddProducts;
 //         <form onSubmit={handleAddProduct}>
 //             {/* name and brand row */}
 //             <div className="md:flex mb-8 ">
-//                 <div className="form-control md:w-1/2">
+//                 <div className="form-control md:w-1/2 mb-4 md:mb-0">
 //                     <label className="label ">
 //                         <span className="label-text text-gray-300">Name</span>
 //                     </label>
@@ -237,7 +237,7 @@ export default AddProducts;
 //                         <input type="text" name="name" placeholder="Name" className="input input-bordered w-full bg-[#23232c]" />
 //                     </label>
 //                 </div>
-//                 <div className="form-control md:w-1/2 ml-4">
+//                 <div className="form-control md:w-1/2 md:ml-4">
 //                     <label className="label">
 //                         <span className="label-text text-gray-300">Brand Name</span>
 //                     </label>
@@ -255,8 +255,8 @@ export default AddProducts;
 //                 </div>
 //             </div>
 //             {/* type and price row */}
-//             <div className="md:flex mb-8">
-//                 <div className="form-control md:w-1/2">
+//             <div className="md:flex mb-5 md:mb-8">
+//                 <div className="form-control md:w-1/2 mb-4 md:mb-0">
 //                     <label className="label">
 //                         <span className="label-text text-gray-300">Type</span>
 //                     </label>
@@ -264,7 +264,7 @@ export default AddProducts;
 //                         <input type="text" name="type" placeholder="Type" className="input input-bordered w-full bg-[#23232c]"  />
 //                     </label>
 //                 </div>
-//                 <div className="form-control md:w-1/2 ml-4">
+//                 <div className="form-control md:w-1/2 md:ml-4">
 //                     <label className="label">
 //                         <span className="label-text text-gray-300">Price</span>
 //                     </label>
@@ -274,8 +274,8 @@ export default AddProducts;
 //                 </div>
 //             </div>
 //             {/* description and ratings row */}
-//             <div className="md:flex mb-8">
-//                 <div className="form-control md:w-1/2">
+//             <div className="md:flex mb-5 md:mb-8">
+//                 <div className="form-control md:w-1/2 mb-4 md:mb-0">
 //                     <label className="label">
 //                         <span className="label-text text-gray-300">Description</span>
 //                     </label>
@@ -283,7 +283,7 @@ export default AddProducts;
 //                         <input type="text" name="description" placeholder="Description" className="input input-bordered w-full bg-[#23232c]"  />
 //                     </label>
 //                 </div>
-//                 <div className="form-control md:w-1/2 ml-4">
+//                 <div className="form-control md:w-1/2 md:ml-4">
 //                     <label className="label">
 //                         <span className="label-text text-gray-300">Rating</span>
 //                     </label>

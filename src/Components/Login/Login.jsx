@@ -17,18 +17,20 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const [googleLoginRedirect, setGoogleLoginRedirect] = useState('');
 
     const handleGoogle = async () => {
-        const intendedDestination = location.state?.from || '/';
-        setGoogleLoginRedirect(intendedDestination);
-
+        const intendedDestination = location?.state?.from || '/';
         try {
-            const result = await googleSignIn();
-            console.log(result.user);
+            await googleSignIn();
             navigate(intendedDestination);
+            swal({
+                title: "Congratulations!",
+                text: "Login Was Successful!",
+                icon: "success",
+                button: "Okay",
+            });
         } catch (error) {
-            console.error(error);
+            setError(error.message);
         }
     };
 
@@ -36,12 +38,8 @@ const Login = () => {
         if (email && password) {
             signIn(email, password)
                 .then(() => {
-                    const locationState = location.state;
-                    if (locationState && locationState.from) {
-                        navigate(locationState.from);
-                    } else {
-                        navigate('/');
-                    }
+                    const intendedDestination = location?.state?.from || '/';
+                    navigate(intendedDestination);
                     swal({
                         title: "Congratulations!",
                         text: "Login Was Successful!",
@@ -112,7 +110,7 @@ const Login = () => {
                                                             type="button"
                                                             data-te-ripple-init
                                                             data-te-ripple-color="light"
-                                                            >
+                                                        >
                                                             Log in
                                                         </button>
 

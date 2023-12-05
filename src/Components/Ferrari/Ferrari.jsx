@@ -78,7 +78,7 @@ const Ferrari = ({ products }) => {
 
 
     return (
-        <div className='bg-[#090b11]'>
+        <div className='bg-[#eef2fa] dark:bg-[#090b11] duration-300'>
             {ferrariProducts.length > 0 ? (
                 <div>
                     <div className=" overflow-hidden xl:h-[70vh] flex justify-center items-center">
@@ -109,9 +109,7 @@ const Ferrari = ({ products }) => {
                             ))}
                         </div>
                     </div>
-
-                    <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-1 mt-10 text-gray-100 font-primary'>Explore Ferraris</h2>
-
+                    <h2 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-center mb-1 mt-10 text-black dark:text-gray-100 duration-300 font-primary'>Explore Ferraris</h2>
                     <div className="max-w-[1870px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 py-10 px-5 mx-auto">
                         {ferrariProducts.map(product => (
                             <div key={product._id} className=" font-primary relative w-full bg-[#1f2229] rounded-lg shadow-lg">
@@ -132,18 +130,18 @@ const Ferrari = ({ products }) => {
                                 </div>
                                 <div>
                                     <div className="py-2 px-5 my-1">
+                                        <h2 className="text-white text-lg mb-3 mt-1 truncate">{product.name}</h2>
                                         <div className='flex justify-between items-center mb-1'>
-                                            <h2 className="text-white text-lg mb-1">{product.name}</h2>
-                                            <h2 className="text-white text-lg mb-1">Brand: {capitalizeFirstLetter(product.brand)}</h2>
+                                            <h5 className='text-white text-xl font-bold truncate'> <span>$</span> {product.price}</h5>
+                                            <h2 className="text-white text-lg truncate w-1/2 text-end pl-2"><span>Brand: </span>{capitalizeFirstLetter(product.brand)}</h2>
                                         </div>
-                                        <h5 className='text-white text-xl font-bold'> <span>$</span> {product.price}</h5>
                                     </div>
                                     <div className="card-actions justify-center border-t text-slate-400 border-[#353a4a] py-3 px-5">
                                         <div className='flex items-center justify-between gap-5 w-full'>
                                             <div className="bg-[#FF9D00] text-white py-1 px-3 rounded-md">
-                                                <span className="font-medium">{product.type}</span>
+                                                <span className="font-medium truncate">{product.type}</span>
                                             </div>
-                                            <div className='flex items-center'>
+                                            <div className='flex items-center truncate'>
                                                 <div className='flex gap-[1px] -mt-[2px] mr-1'>
                                                     {Array.from({ length: Math.min(Math.floor(product.rating), 5) }, (_, index) => (
                                                         <span key={index} className="text-yellow-400"><BsStarFill /></span>
@@ -159,7 +157,6 @@ const Ferrari = ({ products }) => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="flex justify-evenly border-t border-[#353a4a]  ">
                                         <div className='w-1/2 border-r border-[#353a4a] text-center'>
                                             <Link to={`/details/${product._id}`}>
@@ -184,7 +181,7 @@ const Ferrari = ({ products }) => {
                     </div>
                 </div>
             ) : (
-                <div className='h-[80vh] flex items-center justify-center text-white'>
+                <div className='h-[80vh] flex items-center justify-center text-black dark:text-white duration-300'>
                     <p className='text-2xl font-bold font-primary'>No products found</p>
                 </div>
             )}

@@ -1,15 +1,22 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import logoWhite from '/AUTOMOVA_WHITE.png'
+import logoBlack from '/AUTOMOVA_BLACK.png'
 import { Link, NavLink } from 'react-router-dom';
-import userPicPlaceholder from '../../../assets/images/userPicPlaceHolder.png'
-import basketImg from '../../../assets/images/basket.png'
-
-import { useContext } from "react";
+import userPicPlaceholder from '../../../assets/images/userPicPlaceHolder.png';
+import cartIcon from '../../../assets/images/cartRoundedWhite.png';
+import cartIconDark from '../../../assets/images/cartRoundedBlack.png';
+import profile from '../../../assets/images/userIconWhite.png';
+import profileDark from '../../../assets/images/userIconBlack.png';
 import { AuthContext } from "../../../services/Firebase/AuthProvider";
-import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+
+
+
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
+    const [dropDownOpen, setDropDownOpen] = useState(false);
+
 
     const { user, logout } = useContext(AuthContext);
 
@@ -17,67 +24,48 @@ const Navbar = () => {
         logout();
     }
 
-    const [theme, setTheme] = useState(
-        localStorage.getItem("theme") || "dark"
-    );
+    const userTheme = localStorage.getItem('theme');
 
-    const element = document.documentElement;
-    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    // default light
+    // const [theme, setTheme] = useState(userTheme === 'dark' ? true : false);
 
-    const options = [
-        {
-            icon: <BsFillSunFill/>,
-            text: "light",
-        },
-        {
-            icon: <BsFillMoonStarsFill/>,
-            text: "dark",
-        }
-    ]
+    // default dark
+    // const [theme, setTheme] = useState(userTheme === 'light' ? false : true);
 
-    function onWindowMatch() {
-        if (
-            theme === "dark" || // Use the 'theme' state value here
-            (!("theme" in localStorage) && darkQuery.matches)
-        ) {
-            element.classList.add("dark");
-        } else {
-            element.classList.remove("dark");
-        }
-    }
 
-    const memoizedOnWindowMatch = useCallback(onWindowMatch, [theme]);
+    // Set the initial theme state based on the user's preference or default to dark
+    const [theme, setTheme] = useState(userTheme === 'light' ? false : true);
+
+    const toggleTheme = () => {
+        const newTheme = !theme;
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+    };
 
     useEffect(() => {
-        localStorage.setItem("theme", theme); // Save the selected theme in localStorage
-        memoizedOnWindowMatch();
-    }, [theme, memoizedOnWindowMatch]);
-
-    useEffect(() => {
-        // Initialize the theme when the component mounts
-        memoizedOnWindowMatch();
-    }, [memoizedOnWindowMatch]);
-
+        document.documentElement.classList.toggle('dark', theme);
+    }, [theme]);
 
     return (
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black font-primary ">
-            <div className="w-full px-7 mx-auto flex flex-wrap items-center justify-between">
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 font-primary bg-slate-100 dark:bg-black duration-300">
+            <div className="w-full px-1 md:px-7 mx-auto flex flex-wrap items-center justify-between">
                 <div className="w-full relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start">
                     <div className='flex items-center gap-4 mr-5'>
-                        <img className='w-16' src={logoWhite} alt="" />
+                        <img className='w-16 dark:block hidden duration-300' src={logoWhite} alt="" />
+                        <img className='w-16 dark:hidden block duration-300' src={logoBlack} alt="" />
                         <a
-                            className="text-2xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+                            className="text-xl xl:text-2xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black dark:text-white duration-300"
                             href="/"
                         >
                             AUTOMOVA
                         </a>
                     </div>
                     <button
-                        className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                        className="text-black dark:text-white duration-300 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                         type="button"
                         onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                        <details >
+                        <details>
                             <summary>
 
                             </summary>
@@ -91,10 +79,10 @@ const Navbar = () => {
                     }
                     id="example-navbar-danger"
                 >
-                    <div className='w-full flex justify-between items-center'>
+                    <div className='w-full flex justify-between items-center mt-5 lg:mt-0 mb-2 lg:mb-0'>
                         <div>
-                            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
-                                <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
+                            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-3 xl:gap-5">
+                                <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
                                     <NavLink
                                         to="/"
                                         className={({ isActive, isPending }) =>
@@ -104,7 +92,7 @@ const Navbar = () => {
                                         HOME
                                     </NavLink>
                                 </li>
-                                <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
+                                <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold text-black dark:text-white duration-300 hover:opacity-75">
                                     <NavLink
                                         to="/contact-us"
                                         className={({ isActive, isPending }) =>
@@ -114,7 +102,7 @@ const Navbar = () => {
                                         CONTACT US
                                     </NavLink>
                                 </li>
-                                <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
+                                <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
                                     <NavLink
                                         to="/about-us"
                                         className={({ isActive, isPending }) =>
@@ -124,100 +112,152 @@ const Navbar = () => {
                                         ABOUT US
                                     </NavLink>
                                 </li>
-
-                                <li>
-                                    {
-                                        options?.map(opt => (
-                                            <button
-                                                key={opt.text}
-                                                onClick={() => setTheme(opt.text)}
-                                                className={`w-8 h-8 leading-9 text-xl rounded-full m-1 ${theme === opt.text ? "text-sky-600" : "text-gray-700"}`}
-                                            >
-                                                {opt.icon}
-                                            </button>
-
-                                        ))
-                                    }
-                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
-                                {user ? (
-                                    <li className="lg:flex-row flex items-center flex-col">
-                                        <a>
-                                            {user.photoURL ? (
-                                                <img
-                                                    src={user.photoURL}
-                                                    alt="Profile"
-                                                    className="h-8 w-8 rounded-full"
-                                                />
-                                            ) : (
-                                                <img
-                                                    src={userPicPlaceholder}
-                                                    alt="Placeholder"
-                                                    className="h-8 w-8 rounded-full bg-gray-300"
-                                                />
-                                            )}
-                                        </a>
-                                        <a className="flex flex-col lg:flex-row list-none lg:ml-auto gap-5">
-                                            {user.displayName ? (
-                                                <p className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">{user.displayName}</p>
-                                            ) : (
-                                                <p className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">{user.email}</p>
-                                            )}
 
-                                            <button
-                                                type="button"
-                                                onClick={handleLogout}
-                                                className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75"
-                                            >
-                                                Logout
-                                            </button>
-                                        </a>
+                        <div >
+                            <ul className=" flex lg:items-center justify-center items-end flex-col lg:flex-row list-none lg:ml-auto gap-3 xl:gap-5">
+
+                                {!user && (
+                                    <li>
+                                        <ul className="flex items-center gap-2 md:gap-5">
+                                            <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold text-black dark:text-white duration-300 hover:opacity-75">
+                                                <NavLink
+                                                    to="/login"
+                                                    className={({ isActive, isPending }) =>
+                                                        isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                                    }
+                                                >
+                                                    LOGIN
+                                                </NavLink>
+                                            </li>
+                                            <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
+                                                <NavLink
+                                                    to="/register"
+                                                    className={({ isActive, isPending }) =>
+                                                        isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                                    }
+                                                >
+                                                    REGISTER
+                                                </NavLink>
+                                            </li>
+                                        </ul>
                                     </li>
-                                ) : (
-                                    <ul className='flex items-center gap-5'>
-                                        <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
-                                            <NavLink
-                                                to="/login"
-                                                className={({ isActive, isPending }) =>
-                                                    isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
-                                                }
-                                            >
-                                                LOGIN
-                                            </NavLink>
-                                        </li>
-                                        <li className="nav-item px-3 py-2 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75">
-                                            <NavLink
-                                                to="/register"
-                                                className={({ isActive, isPending }) =>
-                                                    isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
-                                                }
-                                            >
-                                                REGISTER
-                                            </NavLink>
-                                        </li>
-                                    </ul>
                                 )}
-                                <li className='flex items-center md:gap-6'>
-                                    <a className="nav-item my-1 mx-3 flex items-center text-base uppercase font-semibold leading-snug text-white hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
-                                        <NavLink
-                                            to="/add-product"
-                                            className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
-                                            }
-                                        >
-                                            <p className='flex items-center mx-3 my-2'><span className='text-2xl mr-2'>+</span><span>ADD PRODUCT</span></p>
-                                        </NavLink>
-                                    </a>
+
+                                <a className="nav-item lg:my-1 xl:mx-3 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
+                                    <NavLink
+                                        to="/add-product"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                        }
+                                    >
+                                        <p className='flex items-center mx-2 xl:mx-3 my-1 xl:my-2'><span className='text-xl md:text-2xl mr-2 '>+</span><span>ADD PRODUCT</span></p>
+                                    </NavLink>
+                                </a>
+
+
+                                <li className='flex items-center gap-3 lg:gap-6'>
                                     {user && (
-                                        <a className="w-14">
+                                        <a className=" ml-3 xl:ml-0">
                                             <Link to="/cart">
-                                                <img src={basketImg} alt="" />
+                                                <img
+                                                    className='w-10 dark:block hidden'
+                                                    src={cartIcon} alt="" />
+                                                <img
+                                                    className='w-10 dark:hidden block'
+                                                    src={cartIconDark} alt="" />
                                             </Link>
                                         </a>
                                     )}
+                                    <div className=" flex rounded-full text-black dark:text-white duration-300">
+                                        <DarkModeSwitch
+                                            checked={theme}
+                                            onChange={toggleTheme}
+                                            size={35}
+                                        />
+                                    </div>
+                                    <div className=''>
+                                        {user && (
+                                            <div className='relative'>
+                                                <button
+                                                    className="text-black dark:text-white duration-300 cursor-pointer text-xl border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
+                                                    type="button"
+                                                    onClick={() => setDropDownOpen(!dropDownOpen)}
+                                                >
+                                                    <summary>
+                                                        {user.photoURL ? (
+                                                            <img
+                                                                src={user.photoURL}
+                                                                alt="Profile"
+                                                                className="h-9 w-9 rounded-full"
+                                                            />
+                                                        ) : (
+                                                            <>
+                                                                <img
+                                                                    src={profile}
+                                                                    alt="Placeholder"
+                                                                    className="h-9 w-9 dark:block hidden"
+                                                                />
+                                                                <img
+                                                                    src={profileDark}
+                                                                    alt="Placeholder"
+                                                                    className="h-9 w-9 dark:hidden block"
+                                                                />
+                                                            </>
+                                                        )}
+
+                                                    </summary>
+                                                </button>
+
+                                                {dropDownOpen && (
+                                                    <div className="origin-top-right absolute right-0 mt-2 w-auto pr-10 rounded-md shadow-lg bg-slate-100 dark:bg-black border border-neutral-300 dark:border-gray-800 ring-1 ring-white dark:ring-black ring-opacity-5">
+                                                        <ul className="py-2">
+                                                            {user && (
+                                                                <li>
+                                                                    <div className="flex items-center space-x-2 p-4">
+                                                                        {user.photoURL ? (
+                                                                            <img
+                                                                                src={user.photoURL}
+                                                                                alt="Profile"
+                                                                                className="h-8 w-8 rounded-full"
+                                                                            />
+                                                                        ) : (
+                                                                            <img
+                                                                                src={userPicPlaceholder}
+                                                                                alt="Placeholder"
+                                                                                className="h-8 w-8 rounded-full bg-gray-300"
+                                                                            />
+                                                                        )}
+
+                                                                        <div>
+                                                                            {user.displayName ? (
+                                                                                <p className="text-sm xl:text-base font-semibold text-black dark:text-white duration-300">
+                                                                                    {user.displayName}
+                                                                                </p>
+                                                                            ) : (
+                                                                                <p className="text-sm xl:text-base font-semibold text-black dark:text-white duration-300">
+                                                                                    {user.email}
+                                                                                </p>
+                                                                            )}
+                                                                            <button
+                                                                                type="button"
+                                                                                onClick={handleLogout}
+
+                                                                                className="text-sm xl:text-base font-semibold text-red-600 hover:text-red-900"
+                                                                            >
+                                                                                Logout
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            )}
+                                                        </ul>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
                                 </li>
                             </ul>
                         </div>

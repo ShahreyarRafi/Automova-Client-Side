@@ -4,15 +4,15 @@
 
 const Footer = () => {
     return (
-        <div className="border-t border-gray-800">
+        <div className="dark:border-t dark:border-gray-800 duration-300">
             <footer
-                className="flex flex-col items-center bg-[#090b11] text-center text-white">
+                className="flex flex-col items-center bg-slate-100 dark:bg-[#090b11] text-center text-black dark:text-white duration-300">
                 <div className="container px-6 pt-6">
                     <div className="mb-6 flex justify-center">
                         <a
                             href="#!"
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 rounded-full border-2 border-black dark:border-white uppercase leading-normal text-black dark:text-white transition ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 duration-300"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -28,7 +28,7 @@ const Footer = () => {
                         <a
                             href="#!"
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 rounded-full border-2 border-black dark:border-white uppercase leading-normal text-black dark:text-white transition ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 duration-300"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -44,7 +44,7 @@ const Footer = () => {
                         <a
                             href="#!"
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 rounded-full border-2 border-black dark:border-white uppercase leading-normal text-black dark:text-white transition ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 duration-300"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -62,7 +62,7 @@ const Footer = () => {
                         <a
                             href="#!"
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 rounded-full border-2 border-black dark:border-white uppercase leading-normal text-black dark:text-white transition ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 duration-300"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -78,7 +78,7 @@ const Footer = () => {
                         <a
                             href="#!"
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 rounded-full border-2 border-black dark:border-white uppercase leading-normal text-black dark:text-white transition ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 duration-300"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -94,7 +94,7 @@ const Footer = () => {
                         <a
                             href="#!"
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 rounded-full border-2 border-black dark:border-white uppercase leading-normal text-black dark:text-white transition ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 duration-300"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -109,10 +109,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div
-                    className="w-full p-4 font-primary text-sm text-center"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+                    className="w-full p-4 font-primary text-sm text-center text-black dark:text-white bg-[#e3e9f1] dark:bg-black duration-300">
                     © 2023 Copyright:
-                    <a className="text-white ml-2" href="/">
+                    <a className="text-black dark:text-white ml-2 duration-300" href="/">
                         AUTOMOVA
                     </a>
                 </div>

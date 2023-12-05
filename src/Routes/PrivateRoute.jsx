@@ -5,6 +5,7 @@ import { AuthContext } from '../services/Firebase/AuthProvider';
 const PrivateRoute = ({ children, to }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
+    console.log(location.pathname);
 
     if(loading){
         return <div className='h-[89vh] flex justify-center items-center'><span className="loading loading-spinner text-[#FF9D00] loading-lg"></span></div>

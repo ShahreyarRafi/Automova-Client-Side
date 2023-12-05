@@ -1,12 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { AuthContext } from "../../services/Firebase/AuthProvider";
 import Swal from "sweetalert2";
 
 const Cart = ({ cartItems, setCartItems }) => {
+    const { user } = useContext(AuthContext);
 
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
+
+    const UserCartItems = cartItems.filter(item => item.userEmail === user.email);
 
     const handleDelete = (e, cartItemId) => {
         e.preventDefault();
@@ -34,7 +37,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                                 'success'
                             );
 
-                            const remaining = cartItems.filter(item => item._id !== cartItemId)
+                            const remaining = cartItems.filter(item => item._id !== cartItemId);
                             setCartItems(remaining);
                         }
                     })
@@ -46,13 +49,11 @@ const Cart = ({ cartItems, setCartItems }) => {
     };
 
     return (
-
-
         <div className='font-primary min-h-[80vh] flex items-center justify-center px-4 py-10 bg-[#090b11]'>
-            {cartItems.length > 0 ? (
+            {UserCartItems.length > 0 ? (
                 <div>
                     <div className="max-w-6xl grid grid-cols-1 xl:grid-cols-2 gap-4 mx-auto">
-                        {cartItems.map(cartItem => (
+                        {UserCartItems.map(cartItem => (
                             <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl bg-[#1e2127] rounded text-gray-100">
                                 <div className="h-full w-full flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl dark:hover-bg-gray-700">
                                     <img className=" object-cover w-full rounded-t-lg h-96 md:h-full md:w-60 md:rounded-none md:rounded-l-md" src={cartItem.photo} alt="" />
@@ -68,7 +69,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                                                 <p className="text-sm text-slate-400 p-1 flex justify-between w-72 "><span className="">Price:</span> <span className="">${cartItem.price}</span></p>
                                             </div>
                                             <div className="mx-auto w-auto md:w-72">
-                                                <button onClick={(e) => handleDelete(e, cartItem._id)} className="bg-[#c9363f] hover:bg-[#f14e59] px-3 py-2 text-white text-sm rounded" >Remove From Cart</button>
+                                                <button onClick={(e) => handleDelete(e, cartItem._id)} className="bg-[#c9363f] hover-bg-[#f14e59] px-3 py-2 text-white text-sm rounded">Remove From Cart</button>
                                             </div>
                                         </div>
                                     </div>
